@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Tutor;
+use App\Request_tutor;
 use Illuminate\Http\Request;
 
-class TutorController extends Controller
+class RequestTutorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TutorController extends Controller
      */
     public function index()
     {
-       // return view('backendadmin.managetutor');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class TutorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Tutor  $tutor
+     * @param  \App\Request_tutor  $request_tutor
      * @return \Illuminate\Http\Response
      */
-    public function show(Tutor $tutor)
+    public function show(Request_tutor $request_tutor)
     {
         //
     }
@@ -52,10 +52,10 @@ class TutorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Tutor  $tutor
+     * @param  \App\Request_tutor  $request_tutor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tutor $tutor)
+    public function edit(Request_tutor $request_tutor)
     {
         //
     }
@@ -64,10 +64,10 @@ class TutorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Tutor  $tutor
+     * @param  \App\Request_tutor  $request_tutor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tutor $tutor)
+    public function update(Request $request, Request_tutor $request_tutor)
     {
         //
     }
@@ -75,10 +75,10 @@ class TutorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Tutor  $tutor
+     * @param  \App\Request_tutor  $request_tutor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Tutor $tutor)
+    public function destroy(Request_tutor $request_tutor)
     {
         //
     }
