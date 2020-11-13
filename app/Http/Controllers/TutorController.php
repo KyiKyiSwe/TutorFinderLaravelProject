@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Tutor;
 use Illuminate\Http\Request;
+use App\Level;
+use App\Grade;
 
 class TutorController extends Controller
 {
@@ -14,7 +16,12 @@ class TutorController extends Controller
      */
     public function index()
     {
-       // return view('backendadmin.managetutor');
+       
+        $tutors=Tutor::all();
+        $levels=Level::all();
+        $grades=Grade::all();
+
+        return view('Backendadmin.index',compact('tutors','levels','grades'));
     }
 
     /**
@@ -24,7 +31,9 @@ class TutorController extends Controller
      */
     public function create()
     {
-        //
+        $levels=Level::all();
+        $grades = Grade::all();
+        return view('Backendadmin.create',compact('levels','grades'));
     }
 
     /**
@@ -46,7 +55,7 @@ class TutorController extends Controller
      */
     public function show(Tutor $tutor)
     {
-        //
+        return view('Backendadmin.show',compact('tutor'));
     }
 
     /**

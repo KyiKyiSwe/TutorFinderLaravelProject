@@ -1,0 +1,8 @@
+Authentication
+==============
+1. install laravel package (composer require laravel/ui:^2.4)
+2. bootstrap ui --auth (php artisan ui vue --auth)
+
+*install node in your os
+3. npm install
+4. npm run dev
