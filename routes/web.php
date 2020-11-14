@@ -14,15 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
-Route::get('home', 'FrontendController@home')->name('homepage');
+//parent
+Route::get('homepage', 'FrontendController@home')->name('homepage');
 
 //frontend
 Route::get('/', 'FrontendController@frontend')->name('frontendpage');
 Route::get('about', 'FrontendController@about')->name('aboutpage');
 Route::get('contact', 'FrontendController@contact')->name('contactpage');
-Route::get('login', 'FrontendController@login')->name('loginpage');
-Route::get('register', 'FrontendController@register')->name('registerpage');
+Route::get('loginstart', 'FrontendController@loginstart')->name('loginstartpage');
+Route::get('singup', 'FrontendController@singup')->name('registerpage');
 Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
@@ -31,4 +31,13 @@ Route::get('parentregister', 'FrontendController@parentregister')->name('parentr
 
 
 Route::resource('tutor','TutorController');
+Route::resource('user','UserController');
+Route::resource('usertutor','UsertutorController');
+
+
+
+
+//Authentication
+Auth::routes(['register'=>false]);
+Route::get('/home', 'HomeController@index')->name('home');
 

@@ -1,29 +1,14 @@
+@extends('layouts.app')
 
-@extends('frontend.frontendtemplate')
-
-<link href="{{asset('frontend_asset/login/css/custom.css')}}" rel="stylesheet">
-<script src="{{asset('frontend_asset/login/js/custom.js')}}"></script>
 @section('content')
- 
- {{-- <div class="login-page">
-  <div class="form">
-    <form class="register-form">
-      <input type="text" placeholder="name"/>
-      <input type="password" placeholder="password"/>
-      <input type="text" placeholder="email address"/>
-      <button>create</button>
-      <p class="message">Already registered? <a href="#">Sign In</a></p>
-    </form>
-    <form class="login-form">
-      <input type="text" placeholder="username"/>
-      <input type="password" placeholder="password"/>
-      <button>login</button>
-      <p class="message">Not registered? <a href="#">Create an account</a></p>
-    </form>
-  </div>
-</div> --}}
-  <div class="my-5 py-5">
-      <form method="POST" action="{{ route('login') }}">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Login') }}</div>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -68,7 +53,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" >
+                                <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
 
@@ -79,7 +64,10 @@
                                 @endif
                             </div>
                         </div>
-      </form>
-  </div>
-
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

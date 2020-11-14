@@ -27,14 +27,14 @@ class FrontendController extends Controller
     	return view('frontend.contact');
     }
 
-    public function login()
+    public function loginstart()
     {
-        return view('frontend.login');
+        return view('frontend.loginstart');
     }
 
-    public function register()
+    public function singup()
     {
-         return view('frontend.register');
+         return view('frontend.singup');
     }
 
     public function loginall()

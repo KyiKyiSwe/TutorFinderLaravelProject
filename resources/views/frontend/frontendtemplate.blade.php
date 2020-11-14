@@ -57,7 +57,7 @@
             <a href="{{route('aboutpage')}}">About</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('loginpage')}}">Login</a>
+            <a href="{{route('loginstartpage')}}">Login</a>
           </li>
           <li class="nav-item">
             <a href="{{route('registerpage')}}">Register</a>

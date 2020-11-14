@@ -46,7 +46,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
+            <a class="nav-link" href="">
               <i class="material-icons">content_paste</i>
               <p>Manage Tutor</p>
             </a>
@@ -70,9 +70,9 @@
       </div>
     </div>
 
-    <div class="main-panel">
+    <div class=" row main-panel ">
       <!-- Navbar -->
-      <div class="row">
+   
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -95,8 +95,7 @@
               </div>
             </form>
             <ul class="navbar-nav">
-              
-              
+                
               <li class="nav-item dropdown">
                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -110,20 +109,22 @@
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#">Log out</a>
                 </div>
+
               </li>
             </ul>
           </div>
-        </div>
+        </div>   
       </nav>
 
       <!-- End Navbar -->
-      <div class="row mt-5 ml-5">
+      
+<div class="row mt-5 ml-5">
+  
     
            @yield('content')
  
         
       </div>
-    </div>
 
 
   </div>
