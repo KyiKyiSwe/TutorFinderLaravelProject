@@ -16,15 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 
 
+
 //frontend
 Route::get('/', 'FrontendController@frontend')->name('frontendpage');
 Route::get('about', 'FrontendController@about')->name('aboutpage');
 Route::get('contact', 'FrontendController@contact')->name('contactpage');
 Route::get('loginstart', 'FrontendController@loginstart')->name('loginstartpage');
-Route::get('register', 'FrontendController@register')->name('registerpage');
+
+
+Route::get('singup', 'FrontendController@singup')->name('registerpage');
+
 Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
+
 
 //for backend admin
 Route::get('viewparent','BackendController@viewparent')->name('viewparentpage');
@@ -33,7 +38,12 @@ Route::get('viewtutor','BackendController@viewtutor')->name('viewtutorpage');
 Route::get('showdetail/{id}','BackendController@showdetail')->name('showdetailpage');
 Route::get('index','BackendController@index')->name('indexpage');
 
+
 Route::resource('tutor','TutorController');
+Route::resource('user','UserController');
+Route::resource('usertutor','UsertutorController');
+
+
 
 // for parent 
 Route::get('parenthome', 'FrontendController@parenthome')->name('parenthomepage');

@@ -6,8 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-
-class UserController extends Controller
+class UsertutorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -54,13 +53,11 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        // assign user as parent
-        $user->assignRole('parent');
+        // assign user as tutor
+        $user->assignRole('tutor');
 
         // redirect
         return redirect()->route('frontendpage');
-
-
     }
 
     /**
