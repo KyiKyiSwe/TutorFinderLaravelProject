@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+
 
 Route::get('home', 'FrontendController@home')->name('homepage');
 
@@ -31,9 +28,7 @@ Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregi
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
 
 
-=======
-Route::get('/', function () {
-    return view('welcome');
-});
-//Route::resource('tutor','TutorController');
->>>>>>> a00d2e8d1825f0e0ff3617f63bdddaf5731bd2d7
+
+
+Route::resource('tutor','TutorController');
+
