@@ -16,12 +16,33 @@ class TutorController extends Controller
      */
     public function index()
     {
+    
+    }
+    public function tutorhome()
+    {
        
-        $tutors=Tutor::all();
-        $levels=Level::all();
-        $grades=Grade::all();
+        return view('tutor.tutorhome');
+    }
 
-        return view('Backendadmin.index',compact('tutors','levels','grades'));
+     public function tutorprofile()
+    {
+       
+        return view('tutor.tutorprofile');
+    }
+    public function feedbackform()
+    {
+       
+        return view('tutor.feedbackform');
+    }
+    public function tutorappointed()
+    {
+       
+        return view('tutor.tutorappointed');
+    }
+    public function tutorrequest()
+    {
+       
+        return view('tutor.tutorrequest');
     }
 
     /**
@@ -31,9 +52,7 @@ class TutorController extends Controller
      */
     public function create()
     {
-        $levels=Level::all();
-        $grades = Grade::all();
-        return view('Backendadmin.create',compact('levels','grades'));
+       
     }
 
     /**
@@ -55,7 +74,7 @@ class TutorController extends Controller
      */
     public function show(Tutor $tutor)
     {
-        return view('Backendadmin.show',compact('tutor'));
+       
     }
 
     /**
@@ -89,6 +108,9 @@ class TutorController extends Controller
      */
     public function destroy(Tutor $tutor)
     {
-        //
+        $tutor->delete();
+         return redirect()->route('Backendadmin.index');
     }
+
+      
 }

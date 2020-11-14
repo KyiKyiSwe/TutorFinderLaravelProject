@@ -54,9 +54,9 @@
                           <th>Julia</th>
                           <th>{{$row->phoneno}}</th>
                           
-                          <th><a href="{{route('Backendadmin.showdetail',$row->id)}}" class="btn btn-info">Detail</a></th>
+                          <th><a href="{{route('tutor.show',$row->id)}}" class="btn btn-info">Detail</a></th>
                           <th>
-                            <form method="post" action="" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
+                            <form method="post" action="{{route('tutor.destroy',$row->id)}}" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
             @csrf
             @method('DELETE')
             <input type="submit" name="btnsubmit" value="Delete" class="btn btn-primary">

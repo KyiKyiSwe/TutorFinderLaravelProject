@@ -3,13 +3,13 @@
 
 	
   <div class="content">
-        <div class="container-fluid ml-5 mt-5">
+        <div class="container-fluid mt-5">
           <div class="row ">
             <div class="col-md-12">
               <div class="card">
 
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title text-center">Tutor Detail Information</h4>
+                  <h4 class="card-title text-center">Appointment Detail Information</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
 
@@ -21,22 +21,34 @@
                           No
                         </th>
                         <th>
-                          Image
+                          Request Id
                         </th>
                         <th>
-                          Tutor Id
+                          Parent Name
                         </th>
                         <th>
                           Tutor Name
                         </th>
                         <th>
-                          Phone
+                          Level
                         </th>
                         <th>
-                          Action
+                          Grade
                         </th>
                         <th>
-                          Action
+                          Subject
+                        </th>
+                        <th>
+                          Start Date
+                        </th>
+                        <th>
+                          Start Time
+                        </th>
+                        <th>
+                          Request Status
+                        </th>
+                        <th>
+                          Payment Status
                         </th>
                        
                       </thead>
@@ -46,26 +58,23 @@
                           $i=1;
                           @endphp
 
-                          @foreach($tutors as $row)
+                          
                         <tr class="text-center">
                           <th>{{$i++}}</th>
-                          <th>{{$row->photo}}</th>
-                          <th>{{$row->id}}</th>                          
-                          <th>Julia</th>
-                          <th>{{$row->phoneno}}</th>
+                          <th>1</th>
+                          <th>Daw Mya Mya</th>                          
+                          <th>Mrs. Julia</th>
+                          <th>Primary</th>
+                          <th>Grade2</th>
+                          <th>Maths</th>
+                          <th>12.11.2020</th>
+                          <th>9:00 AM</th>
+                          <th>Confirm</th>
+                          <th>Paid</th>
                           
-                          <th><a href="{{route('Backendadmin.showdetail',$row->id)}}" class="btn btn-info">Detail</a></th>
-                          <th>
-                            <form method="post" action="" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
-            @csrf
-            @method('DELETE')
-            <input type="submit" name="btnsubmit" value="Delete" class="btn btn-primary">
-                          </th>
                           
                         </tr>
-                          @endforeach
-                        
-                      </tbody>
+                   </tbody>
                     </table>
                   </div>
                 </div>

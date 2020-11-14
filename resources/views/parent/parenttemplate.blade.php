@@ -53,6 +53,7 @@
           <li><a href="#">RequestedDemo</a></li>
           <li><a href="#">AcceptedTutors</a></li>
           <li><a href="#">Feedback</a></li>
+          <li><a href="#">My Profile</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->

@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function home()
+    public function parenthome()
     {
         
-    	return view('parent.home');
+    	return view('parent.parenthome');
     }
 
     public function frontend()
@@ -27,9 +27,9 @@ class FrontendController extends Controller
     	return view('frontend.contact');
     }
 
-    public function login()
+    public function loginstart()
     {
-        return view('frontend.login');
+        return view('frontend.loginstart');
     }
 
     public function register()

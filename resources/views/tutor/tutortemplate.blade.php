@@ -28,8 +28,6 @@
   <!-- Template Main CSS File -->
   <link href="{{asset('frontend_asset/assets/css/style.css')}}" rel="stylesheet">
 
-  
-
   <!-- =======================================================
   * Template Name: Mentor - v2.1.0
   * Template URL: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/
@@ -50,21 +48,12 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="nav-item">
-            <a href="{{route('frontendpage')}}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('aboutpage')}}">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('loginstartpage')}}">Login</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('registerpage')}}">Register</a>
-          </li>
-          <li class="nav-item">
-            <a href="{{route('contactpage')}}">Contact</a>
-          </li>
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="#">Subject</a></li>
+          <li><a href="{{route('tutorrequestpage')}}">Demo Request</a></li>
+          <li><a href="{{route('tutorappointedpage')}}">Appointed Tutor</a></li>
+          <li><a href="{{route('feedbackformpage')}}">Feedback</a></li>
+          <li><a href="{{route('tutorprofilepage')}}">My Profile</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -121,9 +110,6 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('frontend_asset/assets/js/main.js')}}"></script>
-
-  
-
 
 </body>
 

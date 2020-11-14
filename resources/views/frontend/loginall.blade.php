@@ -1,4 +1,3 @@
-
 @extends('frontend.frontendtemplate')
 
 <link href="{{asset('frontend_asset/login/css/custom.css')}}" rel="stylesheet">

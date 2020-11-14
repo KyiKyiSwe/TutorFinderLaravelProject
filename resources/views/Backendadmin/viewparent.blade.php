@@ -9,7 +9,7 @@
               <div class="card">
 
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title text-center">Tutor Detail Information</h4>
+                  <h4 class="card-title text-center">Parent Detail Information</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
 
@@ -21,19 +21,19 @@
                           No
                         </th>
                         <th>
-                          Image
+                          Parent Name
                         </th>
                         <th>
-                          Tutor Id
+                          E-mail
                         </th>
                         <th>
-                          Tutor Name
+                          Contact no:
                         </th>
                         <th>
-                          Phone
+                          Address
                         </th>
                         <th>
-                          Action
+                          City
                         </th>
                         <th>
                           Action
@@ -46,24 +46,19 @@
                           $i=1;
                           @endphp
 
-                          @foreach($tutors as $row)
+                       
                         <tr class="text-center">
                           <th>{{$i++}}</th>
-                          <th>{{$row->photo}}</th>
-                          <th>{{$row->id}}</th>                          
-                          <th>Julia</th>
-                          <th>{{$row->phoneno}}</th>
-                          
-                          <th><a href="{{route('Backendadmin.showdetail',$row->id)}}" class="btn btn-info">Detail</a></th>
-                          <th>
-                            <form method="post" action="" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
-            @csrf
-            @method('DELETE')
-            <input type="submit" name="btnsubmit" value="Delete" class="btn btn-primary">
-                          </th>
+                          <th>Daw Mya Mya</th>
+                          <th>myamya@gmail.com</th>                          
+                          <th>09-83843477347</th>
+                          <th>Between 32 x 33 street</th>
+                          <th>Mandalay</th>
+
+                          <th><a href="" class="btn btn-info">Delete</a></th>
                           
                         </tr>
-                          @endforeach
+                    
                         
                       </tbody>
                     </table>
