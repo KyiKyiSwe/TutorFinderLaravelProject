@@ -23,8 +23,11 @@ Route::get('about', 'FrontendController@about')->name('aboutpage');
 Route::get('contact', 'FrontendController@contact')->name('contactpage');
 
 
+
 Route::get('singup', 'FrontendController@singup')->name('registerpage');
 Route::get('loginuser','FrontendController@loginuser')->name('loginuserpage');
+
+//Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
 
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
@@ -48,6 +51,7 @@ Route::resource('tutorprofile','TutorprofileController');
 
 
 // for parent 
+
 
 Route::get('parentrequest', 'FrontendController@parentrequest')->name('parentrequest');
 Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedtutor');

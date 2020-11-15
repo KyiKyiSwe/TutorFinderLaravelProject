@@ -17,6 +17,35 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
+          <h2>Your Profile</h2>
+          <p>Profile</p>
+        </div>
+        <div class="row my-5">
+
+          <div class="col-md-6">
+            <img src="{{asset('frontend_asset/image/login.png')}}" class="img-fluid">
+          </div>
+
+          <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Daw Mya</h4>
+                </div>
+                <div class="card-body">
+                    <p>Yangon</p>
+                </div>
+                <div class="card-footer">
+
+                    <a href="{{-- {{route('userparent.edit',$userparents->id)}} --}}" class="btn btn-success">Edit</a> 
+                    <a href="" class="btn btn-success">Delete</a>        
+                </div>
+            </div>
+          </div>
+        </div>
+    <!-- /.row -->
+        <hr class="my-5">
+
+        <div class="section-title my-3">
           <h2>Tutors</h2>
           <p>Our Tutors</p>
         </div>

@@ -6,10 +6,25 @@
   
     <!-- main -->
 	<div class="main-w3layouts wrapper my-5">
-		<h1>Creative Parent Form</h1>
+		<h3>Creative Parent Form</h3>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
+				<form action="{{route('userparent.store')}}" method="post" 
+				enctype="multipart/form-data">
+                    @csrf
+
+                    <div class="form-group">
+		              <label>Name:</label>
+		              <select name="user" class="form-control">
+		                <optgroup label="Choose User">
+
+		                  @foreach($users as $user)
+		                   <option value="{{$user->id}}">{{$user->name}}</option>
+		                  @endforeach
+		         
+		                </optgroup>
+		              </select>
+		            </div>
 
 		            <div class="form-group">
 		              <label>Photo: (<small class="text-danger">* jpeg|bmp|png</small>)</label>
@@ -51,20 +66,7 @@
 		              @enderror
 		            </div>
 
-		            <div class="form-group">
-		              <label>User:</label>
-		              <select name="level" class="form-control">
-		                <optgroup label="Choose User">
-		                  
-		                  @foreach($users as $user)
-		                   <option value="{{$user->id}}">{{$user->name}}</option>
-		                  @endforeach
-		                  {{-- <option>1</option>
-		                  <option>2</option>
-		                  <option>3</option> --}}
-		                </optgroup>
-		              </select>
-		            </div>
+		            
 
 		            <div class="form-group">
 		              <input type="submit" name="btnsubmit" value="Save" class="btn btn-success">

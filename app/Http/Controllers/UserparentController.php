@@ -39,7 +39,40 @@ class UserparentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        // Validation
+        $request-> validate([
+            "photo" => "required|mimes:jpeg,bmp,png", // a.jpg
+            "phone" => "required",
+            "address" => "required",
+            "city" => "required",
+            "user" => "required"
+        ]);
+
+        // If include file, upload
+        if($request->file()) {
+            // 624872374523_a.jpg
+            $fileName = time().'_'.$request->photo->getClientOriginalName();
+
+            // brandimg/624872374523_a.jpg
+            $filePath = $request->file('photo')->storeAs('parentimg', $fileName, 'public');
+
+            $path = '/storage/'.$filePath;
+
+        }
+
+        // store
+        $parent = new Userparent;
+        $parent->photo = $path;
+        $parent->phoneno = $request->phone;
+        $parent->address = $request->address;
+        $parent->city = $request->city;
+        $parent->user_id = $request->user;
+        $parent->save();
+
+        // redirect
+        return redirect()->route('userparent.index');
     }
 
     /**
@@ -61,7 +94,9 @@ class UserparentController extends Controller
      */
     public function edit(Userparent $userparent)
     {
-        //
+        $userparents = Userparent::all();
+        $users = User::all();
+        return view('parent.edit',compact('userparents','users'));
     }
 
     /**
@@ -73,7 +108,7 @@ class UserparentController extends Controller
      */
     public function update(Request $request, Userparent $userparent)
     {
-        //
+        dd($request);
     }
 
     /**
