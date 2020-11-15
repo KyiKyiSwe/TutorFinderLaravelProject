@@ -6,6 +6,7 @@ use App\Tutor;
 use Illuminate\Http\Request;
 use App\Level;
 use App\Grade;
+use App\User;
 
 class TutorController extends Controller
 {
@@ -16,36 +17,11 @@ class TutorController extends Controller
      */
     public function index()
     {
-        // $categories=Category::all();
-        return view('tutor.index');
+        // $tutors=Tutor::all();
+        // return view('tutor.index',compact('tutors'));
     }
-    public function tutorhome()
-    {
-       
-        return view('tutor.tutorhome');
-    }
-
     
-    public function feedbackform()
-    {
-       
-        return view('tutor.feedbackform');
-    }
-    public function tutorappointed()
-    {
-       
-        return view('tutor.tutorappointed');
-    }
-    public function tutorrequest()
-    {
-       
-        return view('tutor.tutorrequest');
-    }
-     public function tutorsubject()
-    {
-       
-        return view('tutor.tutorsubject');
-    }
+    
 
 
     /**
@@ -55,9 +31,11 @@ class TutorController extends Controller
      */
     public function create()
     {
-       $levels = Level::all();
-       $grades = Grade::all();
-       return view('tutor.create',compact('levels','grades'));
+       // $levels = Level::all();
+       // $grades = Grade::all();
+       // $users = User::all();
+       
+       // return view('tutor.create',compact('levels','grades','users'));
     }
 
     /**
@@ -68,42 +46,44 @@ class TutorController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        $request->validate([
+        //dd($request);
+     //    $request->validate([
         
-            "photo"=>"required|mimes:jpeg,bmp,png",
-            "phone"=>"required",
-            "school" =>"required",
-            "qualification" => "required",
-            "address" =>"required",
-            "city" => "required",
-            "level" => "required",
-            "grade" => "required"
-        ]);
+     //        "photo"=>"required|mimes:jpeg,bmp,png",
+     //        "phone"=>"required",
+     //        "school" =>"required",
+     //        "qualification" => "required",
+     //        "address" =>"required",
+     //        "city" => "required",
+     //        "level" => "required",
+     //        "grade" => "required",
+     //        "name" =>"required"
+     //    ]);
 
-        //if the file include, please upload (eg:input type="file")
-        if ($request->file()) {
+     //    //if the file include, please upload (eg:input type="file")
+     //    if ($request->file()) {
 
-            //78748785858_bella.jpg
-            $fileName = time().'_'.$request->photo->getClientOriginalName();
-            //categoryimg/78748785858_bella.jpg
-            $filepath =$request->file('photo')->storeAs('tutorimg',$fileName,'public');
-            $path ='/storage/'.$filepath;
-        }
+     //        //78748785858_bella.jpg
+     //        $fileName = time().'_'.$request->photo->getClientOriginalName();
+     //        //categoryimg/78748785858_bella.jpg
+     //        $filepath =$request->file('photo')->storeAs('tutorimg',$fileName,'public');
+     //        $path ='/storage/'.$filepath;
+     //    }
 
-            $tutor =new Tutor;
-            $tutor->photo = $path;
-            $tutor->phone = $request->phone;
-            $tutor->school = $request->school;
-            $tutor->qualification = $request->qualification;
-            $tutor->address = $request->address;
-            $tutor->city = $request->city;
-            $tutor->level_id =$request->level;
-            $tutor->grade_id = $request->grade;
+     //        $tutor =new Tutor;
+     //        $tutor->photo = $path;
+     //        $tutor->phoneno = $request->phone;
+     //        $tutor->schoolname = $request->school;
+     //        $tutor->qualification = $request->qualification;
+     //        $tutor->address = $request->address;
+     //        $tutor->city = $request->city;
+     //        $tutor->level_id =$request->level;
+     //        $tutor->grade_id = $request->grade;
+     //        $tutor->user_id = $request->user;
 
-            $item->save();
+     //        $tutor->save();
 
-     return redirect()->route('tutor.index');
+     // return redirect()->route('tutor.index');
     }
 
     /**
@@ -125,9 +105,10 @@ class TutorController extends Controller
      */
     public function edit(Tutor $tutor)
     {
-        $levels = Level::all();
-       $grades = Grade::all();
-       return view('tutor.create',compact('tutor','levels','grades'));
+        // $levels = Level::all();
+       // $grades = Grade::all();
+       // $users = User::all();
+       // return view('tutor.edit',compact('tutor','levels','grades','users'));
     }
 
     /**
@@ -139,43 +120,43 @@ class TutorController extends Controller
      */
     public function update(Request $request, Tutor $tutor)
     {
-        $request->validate([
+        // $request->validate([
         
-            "photo"=>"required|mimes:jpeg,bmp,png",
-            "phone"=>"required",
-            "school" =>"required",
-            "qualification" => "required",
-            "address" =>"required",
-            "city" => "required",
-            "level" => "required",
-            "grade" => "required"
-        ]);
+        //     "photo"=>"required|mimes:jpeg,bmp,png",
+        //     "phone"=>"required",
+        //     "school" =>"required",
+        //     "qualification" => "required",
+        //     "address" =>"required",
+        //     "city" => "required",
+        //     "level" => "required",
+        //     "grade" => "required",
+        //     "name" =>"required"
+        // ]);
 
-        //if the file include, please upload (eg:input type="file")
-        // If include file, upload
-        if($request->file()) {
-            // 624872374523_a.jpg
-            $fileName = time().'_'.$request->photo->getClientOriginalName();
+        // //if the file include, please upload (eg:input type="file")
+        // if ($request->file()) {
 
-            // brandimg/624872374523_a.jpg
-            $filePath = $request->file('photo')->storeAs('tutorimg', $fileName, 'public');
+        //     //78748785858_bella.jpg
+        //     $fileName = time().'_'.$request->photo->getClientOriginalName();
+        //     //categoryimg/78748785858_bella.jpg
+        //     $filepath =$request->file('photo')->storeAs('tutorimg',$fileName,'public');
+        //     $path ='/storage/'.$filepath;
+        // }else{
+        //     $path=$request->oldphoto;
+        // }
 
-            $path = '/storage/'.$filePath;
-        }else{
-            $path = $request->oldphoto;
-        }
+        //     $tutor =new Tutor;
+        //     $tutor->photo = $path;
+        //     $tutor->phone = $request->phone;
+        //     $tutor->school = $request->school;
+        //     $tutor->qualification = $request->qualification;
+        //     $tutor->address = $request->address;
+        //     $tutor->city = $request->city;
+        //     $tutor->level_id =$request->level;
+        //     $tutor->grade_id = $request->grade;
+        //     $tutor->user_id = $request->user;
 
-            $tutor =new Tutor;
-            $tutor->photo = $path;
-            $tutor->phone = $request->phone;
-            $tutor->school = $request->school;
-            $tutor->qualification = $request->qualification;
-            $tutor->address = $request->address;
-            $tutor->city = $request->city;
-            $tutor->level_id =$request->level;
-            $tutor->grade_id = $request->grade;
-
-            $item->save();
+        //     $item->save();
 
      return redirect()->route('tutor.index');
     }
@@ -191,6 +172,23 @@ class TutorController extends Controller
         $tutor->delete();
          return redirect()->route('tutor.index');
     }
+
+    public function feedbackform()
+    {
+       
+        return view('tutor.feedbackform');
+    }
+    public function tutorappointed()
+    {
+       
+        return view('tutor.tutorappointed');
+    }
+    public function tutorrequest()
+    {
+       
+        return view('tutor.tutorrequest');
+    }
+     
 
       
 }

@@ -23,20 +23,16 @@ class FrontendController extends Controller
     	return view('frontend.contact');
     }
 
-    public function loginstart()
-    {
-        return view('frontend.loginstart');
-    }
-
+  
     public function singup()
     {
          return view('frontend.singup');
     }
-
-    public function loginall()
+    public function loginuser()
     {
-        return view('frontend.loginall');
+         return view('frontend.loginuser');
     }
+
 
     public function tutorregister()
     {

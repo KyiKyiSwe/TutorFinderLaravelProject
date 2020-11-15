@@ -47,12 +47,15 @@ class LoginController extends Controller
             case 'admin':
                     return 'admin';
                 break;
+
             case 'tutor':
-                    return 'tutor';
-                break;
+                return 'tutorprofile';
+            break;
+            
             case 'parent':
-                    return 'userparent';
-                break;
+                return 'userparent';
+            break;
+
             default:
                 return '/';
         }
