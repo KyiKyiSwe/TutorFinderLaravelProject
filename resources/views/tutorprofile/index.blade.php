@@ -21,8 +21,6 @@
           <p>Our Tutors</p>
         </div>
 
-        
-
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <img src="{{asset('frontend_asset/assets/img/trainers/trainer-2.jpg')}}" class="img-fluid" alt="">
@@ -42,9 +40,7 @@
             </div>
           </div>
 
-          
-
-      </div>
+    </div>
     </section><!-- End Trainers Section -->
 
     <!-- ======= Counts Section ======= -->

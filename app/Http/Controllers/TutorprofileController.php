@@ -54,7 +54,7 @@ class TutorprofileController extends Controller
             "city" => "required",
             "level" => "required",
             "grade" => "required",
-            "user" =>"required"
+            "name" =>"required"
         ]);
 
         //if the file include, please upload (eg:input type="file")
@@ -76,7 +76,7 @@ class TutorprofileController extends Controller
             $tutor->city = $request->city;
             $tutor->level_id =$request->level;
             $tutor->grade_id = $request->grade;
-            $tutor->user_id = $request->user;
+            $tutor->user_id = $request->name;
 
             $tutor->save();
 
