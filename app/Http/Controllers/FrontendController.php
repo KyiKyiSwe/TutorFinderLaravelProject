@@ -49,11 +49,11 @@ class FrontendController extends Controller
     }
 
     //parent
-    public function parenthome()
-    {
+    // public function parenthome()
+    // {
         
-        return view('parent.index');
-    }
+    //     return view('parent.index');
+    // }
     
     public function parentrequest()
     {
@@ -69,8 +69,8 @@ class FrontendController extends Controller
         return view('parent.booking');
     }
 
-    public function parentprofile()
-    {
-        return view('parent.create');
-    }
+    // public function parentprofile()
+    // {
+    //     return view('parent.create');
+    // }
 }

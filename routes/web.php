@@ -21,12 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@frontend')->name('frontendpage');
 Route::get('about', 'FrontendController@about')->name('aboutpage');
 Route::get('contact', 'FrontendController@contact')->name('contactpage');
-Route::get('loginstart', 'FrontendController@loginstart')->name('loginstartpage');
+
 
 
 Route::get('singup', 'FrontendController@singup')->name('registerpage');
 
-Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
+//Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
 
@@ -48,7 +48,7 @@ Route::resource('subject','SubjectController');
 
 
 // for parent 
-Route::get('parenthome', 'FrontendController@parenthome')->name('parenthomepage');
+//Route::get('parenthome', 'FrontendController@parenthome')->name('parenthomepage');
 Route::get('parentrequest', 'FrontendController@parentrequest')->name('parentrequest');
 Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedtutor');
 Route::get('booking', 'FrontendController@booking')->name('bookingpage');
@@ -65,5 +65,5 @@ Route::get('tutorstore','TutorController@store')->name('tutor.store');
 
 //Authentication
 Auth::routes(['register'=>false]);
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 

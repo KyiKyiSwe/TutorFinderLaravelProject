@@ -13,17 +13,6 @@
 				<form action="#" method="post">
 
 		            <div class="form-group">
-		              <label>Level:</label>
-		              <select name="level" class="form-control">
-		                <optgroup label="Choose Level">
-		                  {{-- @foreach($brands as $brand)
-		                  <option value="{{$brand->id}}">{{$brand->name}}</option>
-		                  @endforeach --}}
-		                </optgroup>
-		              </select>
-		            </div>
-
-		            <div class="form-group">
 		              <label>Grade:</label>
 		              <select name="grade" class="form-control">
 		                <optgroup label="Choose Grade">
@@ -52,7 +41,7 @@
 		                    </a>
 		                </div>
 		                <div class="col-lg-6 col-md-6 col-sm-6">
-		                    <a href="{{route('parenthomepage')}}" class="btn btn-success">
+		                    <a href="{{route('userparent.index')}}" class="btn btn-success">
 		                    	Back
 		                    </a>
 		                </div>

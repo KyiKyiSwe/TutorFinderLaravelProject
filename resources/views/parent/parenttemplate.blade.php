@@ -49,7 +49,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{route('parenthomepage')}}">Home</a></li>
+          <li class="active"><a href="{{route('userparent.index')}}">Home</a></li>
           <li><a href="{{route('bookingpage')}}">Booking</a></li>
           <li><a href="{{route('parentrequest')}}">Requested Demo</a></li>
           <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li>
