@@ -16,7 +16,8 @@ class TutorController extends Controller
      */
     public function index()
     {
-    
+        // $categories=Category::all();
+        return view('tutor.index');
     }
     public function tutorhome()
     {
@@ -24,11 +25,7 @@ class TutorController extends Controller
         return view('tutor.tutorhome');
     }
 
-     public function tutorprofile()
-    {
-       
-        return view('tutor.tutorprofile');
-    }
+    
     public function feedbackform()
     {
        
@@ -44,6 +41,12 @@ class TutorController extends Controller
        
         return view('tutor.tutorrequest');
     }
+     public function tutorsubject()
+    {
+       
+        return view('tutor.tutorsubject');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -52,7 +55,9 @@ class TutorController extends Controller
      */
     public function create()
     {
-       
+       $levels = Level::all();
+       $grades = Grade::all();
+       return view('tutor.create',compact('levels','grades'));
     }
 
     /**
@@ -63,7 +68,42 @@ class TutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
+        $request->validate([
+        
+            "photo"=>"required|mimes:jpeg,bmp,png",
+            "phone"=>"required",
+            "school" =>"required",
+            "qualification" => "required",
+            "address" =>"required",
+            "city" => "required",
+            "level" => "required",
+            "grade" => "required"
+        ]);
+
+        //if the file include, please upload (eg:input type="file")
+        if ($request->file()) {
+
+            //78748785858_bella.jpg
+            $fileName = time().'_'.$request->photo->getClientOriginalName();
+            //categoryimg/78748785858_bella.jpg
+            $filepath =$request->file('photo')->storeAs('tutorimg',$fileName,'public');
+            $path ='/storage/'.$filepath;
+        }
+
+            $tutor =new Tutor;
+            $tutor->photo = $path;
+            $tutor->phone = $request->phone;
+            $tutor->school = $request->school;
+            $tutor->qualification = $request->qualification;
+            $tutor->address = $request->address;
+            $tutor->city = $request->city;
+            $tutor->level_id =$request->level;
+            $tutor->grade_id = $request->grade;
+
+            $item->save();
+
+     return redirect()->route('tutor.index');
     }
 
     /**
@@ -85,7 +125,9 @@ class TutorController extends Controller
      */
     public function edit(Tutor $tutor)
     {
-        //
+        $levels = Level::all();
+       $grades = Grade::all();
+       return view('tutor.create',compact('tutor','levels','grades'));
     }
 
     /**
@@ -97,7 +139,45 @@ class TutorController extends Controller
      */
     public function update(Request $request, Tutor $tutor)
     {
-        //
+        $request->validate([
+        
+            "photo"=>"required|mimes:jpeg,bmp,png",
+            "phone"=>"required",
+            "school" =>"required",
+            "qualification" => "required",
+            "address" =>"required",
+            "city" => "required",
+            "level" => "required",
+            "grade" => "required"
+        ]);
+
+        //if the file include, please upload (eg:input type="file")
+        // If include file, upload
+        if($request->file()) {
+            // 624872374523_a.jpg
+            $fileName = time().'_'.$request->photo->getClientOriginalName();
+
+            // brandimg/624872374523_a.jpg
+            $filePath = $request->file('photo')->storeAs('tutorimg', $fileName, 'public');
+
+            $path = '/storage/'.$filePath;
+        }else{
+            $path = $request->oldphoto;
+        }
+
+            $tutor =new Tutor;
+            $tutor->photo = $path;
+            $tutor->phone = $request->phone;
+            $tutor->school = $request->school;
+            $tutor->qualification = $request->qualification;
+            $tutor->address = $request->address;
+            $tutor->city = $request->city;
+            $tutor->level_id =$request->level;
+            $tutor->grade_id = $request->grade;
+
+            $item->save();
+
+     return redirect()->route('tutor.index');
     }
 
     /**
@@ -109,7 +189,7 @@ class TutorController extends Controller
     public function destroy(Tutor $tutor)
     {
         $tutor->delete();
-         return redirect()->route('Backendadmin.index');
+         return redirect()->route('tutor.index');
     }
 
       

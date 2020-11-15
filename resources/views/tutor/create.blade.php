@@ -9,31 +9,13 @@
 		<h1>Creative SignUp Form</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-				<form action="#" method="post">
-					<div class="form-group">
-		              <label>Name:</label>
-		              <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter name" value="{{old('name')}}">
-		              @error('name')
-		                <span class="invalid-feedback" role="alert">
-		                  <strong>{{ $message }}</strong>
-		                </span>
-		              @enderror
-		            </div>
+				<form method="post" action="{{route('tutor.store')}}" enctype="multipart/form-data">
+               @csrf
 
 		            <div class="form-group">
 		              <label>Photo: (<small class="text-danger">* jpeg|bmp|png</small>)</label>
 		              <input type="file" name="photo" class="form-control-file @error('photo') is-invalid @enderror">
 		              @error('photo')
-		                <span class="invalid-feedback" role="alert">
-		                  <strong>{{ $message }}</strong>
-		                </span>
-		              @enderror
-		            </div>
-
-		            <div class="form-group">
-		              <label>Email:</label>
-		              <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter email" value="{{old('email')}}">
-		              @error('email')
 		                <span class="invalid-feedback" role="alert">
 		                  <strong>{{ $message }}</strong>
 		                </span>
@@ -89,84 +71,38 @@
 		                </span>
 		              @enderror
 		            </div>
+		            
 
 		            <div class="form-group">
 		              <label>Level:</label>
 		              <select name="level" class="form-control">
-		                <optgroup label="Choose Level">
-		                  {{-- @foreach($brands as $brand)
-		                  <option value="{{$brand->id}}">{{$brand->name}}</option>
-		                  @endforeach --}}
+		                <optgroup label="Choose Level text-danger">
+		                  @foreach($levels as $level)
+		                  <option value="{{$level->id}}">{{$level->name}}</option>
+		                  @endforeach
 		                </optgroup>
 		              </select>
 		            </div>
 
 		            <div class="form-group">
-		              <label>Subject:</label>
+		              <label>Grade:</label>
 		              <select name="subject" class="form-control">
 		                <optgroup label="Choose Subject">
-		                  {{-- @foreach($brands as $brand)
-		                  <option value="{{$brand->id}}">{{$brand->name}}</option>
-		                  @endforeach --}}
+		                  @foreach($grades as $grade)
+		                  <option value="{{$grade->id}}">{{$grade->name}}</option>
+		                  @endforeach
 		                </optgroup>
 		              </select>
 		            </div>
 
 		            <div class="form-group">
-		                <label for="password">{{ __('Password') }}</label>
-
-		                
-		                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-		                @error('password')
-		                    <span class="invalid-feedback" role="alert">
-		                        <strong>{{ $message }}</strong>
-		                    </span>
-		                @enderror
-		                
-		            </div>
-
-		            <div class="form-group">
-		                <label for="password-confirm">{{ __('Confirm Password') }}</label>
-
-		                
-		                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-		                
-		            </div>
-
-		            <div class="form-group row mb-0">
-		                <div class="col-md-6 offset-md-4">
-		                    <button type="submit">
-	                            {{ __('SIGNUP') }}
-	                        </button>
-		                </div>
-		            </div>
-
-		            
-					
-					{{-- <input class="text email" type="email" name="email" placeholder="Email" required="">
-					<input class="text" type="password" name="password" placeholder="Password" required="">
-					<input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required=""> --}}
-					
-					{{-- <input type="submit" value="SIGNUP"> --}}
+                  		<input type="submit" name="btnsubmit" value="Save" class="btn btn-success">
+               		</div>
 				</form>
-				<p class="my-5">Don't have an Account? <a href="{{route('loginallpage')}}"> Login Now!</a></p>
+				
 			</div>
-		</div>
-		
-		<ul class="colorlib-bubbles">
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-			<li></li>
-		</ul>
+		</div>	
 	</div>
-	<!-- //main -->
+
 
 @endsection

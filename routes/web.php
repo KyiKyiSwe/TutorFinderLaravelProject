@@ -43,6 +43,7 @@ Route::resource('tutor','TutorController');
 Route::resource('user','UserController');
 Route::resource('userparent','UserparentController');
 Route::resource('usertutor','UsertutorController');
+Route::resource('subject','SubjectController');
 
 
 
@@ -55,12 +56,12 @@ Route::get('parentprofile', 'FrontendController@parentprofile')->name('parentpro
 
 
 //for tutor
-Route::get('tutorhome', 'TutorController@tutorhome')->name('tutorhomepage');
-Route::get('tutorprofile','TutorController@tutorprofile')->name('tutorprofilepage');
+
 Route::get('feedbackform','TutorController@feedbackform')->name('feedbackformpage');
 Route::get('tutorappointed','TutorController@tutorappointed')->name('tutorappointedpage');
 Route::get('tutorrequest','TutorController@tutorrequest')->name('tutorrequestpage');
-
+// Route::get('tutorsubject','TutorController@tutorsubject')->name('tutorsubjectpage');
+Route::get('tutorstore','TutorController@store')->name('tutor.store');
 
 //Authentication
 Auth::routes(['register'=>false]);
