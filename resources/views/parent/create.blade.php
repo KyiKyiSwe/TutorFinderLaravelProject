@@ -56,12 +56,12 @@
 		              <select name="level" class="form-control">
 		                <optgroup label="Choose User">
 		                  
-		                  {{-- @foreach($users as $user)
+		                  @foreach($users as $user)
 		                   <option value="{{$user->id}}">{{$user->name}}</option>
-		                  @endforeach --}}
-		                  <option>1</option>
+		                  @endforeach
+		                  {{-- <option>1</option>
 		                  <option>2</option>
-		                  <option>3</option>
+		                  <option>3</option> --}}
 		                </optgroup>
 		              </select>
 		            </div>

@@ -54,7 +54,7 @@
           <li><a href="{{route('parentrequest')}}">Requested Demo</a></li>
           <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li>
           <li><a href="#">Feedback</a></li>
-          <li><a href="{{route('parentprofile')}}">Add Profile</a></li>
+          <li><a href="{{route('userparent.create')}}">Add Profile</a></li>
 
 
         </ul>

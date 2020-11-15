@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Userparent;
-use App\Auth\User as Authenticatable;
+use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 
