@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Userparent;
+use App\Auth\User as Authenticatable;
 use Illuminate\Http\Request;
+use Spatie\Permission\Traits\HasRoles;
 
 class UserparentController extends Controller
 {
@@ -14,7 +16,8 @@ class UserparentController extends Controller
      */
     public function index()
     {
-        //
+        $userparents = Userparent::all();
+        return view('parent.index',compact('userparents'));
     }
 
     /**
@@ -24,7 +27,8 @@ class UserparentController extends Controller
      */
     public function create()
     {
-        //
+        $users = User::all();
+        return view('parent.create',compact('users'));
     }
 
     /**

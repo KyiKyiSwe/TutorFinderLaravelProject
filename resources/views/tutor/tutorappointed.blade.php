@@ -1,4 +1,5 @@
 @extends('tutor.tutortemplate')
+   <link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
 @section('content')  
     <!-- main -->
     <div class="container">

@@ -41,12 +41,18 @@ Route::get('index','BackendController@index')->name('indexpage');
 
 Route::resource('tutor','TutorController');
 Route::resource('user','UserController');
+Route::resource('userparent','UserparentController');
 Route::resource('usertutor','UsertutorController');
 
 
 
 // for parent 
 Route::get('parenthome', 'FrontendController@parenthome')->name('parenthomepage');
+Route::get('parentrequest', 'FrontendController@parentrequest')->name('parentrequest');
+Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedtutor');
+Route::get('booking', 'FrontendController@booking')->name('bookingpage');
+Route::get('parentprofile', 'FrontendController@parentprofile')->name('parentprofile');
+
 
 //for tutor
 Route::get('tutorhome', 'TutorController@tutorhome')->name('tutorhomepage');

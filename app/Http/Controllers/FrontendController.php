@@ -6,11 +6,7 @@ use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
-    public function parenthome()
-    {
-        
-    	return view('parent.parenthome');
-    }
+    //frontend
 
     public function frontend()
     {
@@ -50,5 +46,31 @@ class FrontendController extends Controller
     public function parentregister()
     {
         return view('frontend.registerparent');
+    }
+
+    //parent
+    public function parenthome()
+    {
+        
+        return view('parent.index');
+    }
+    
+    public function parentrequest()
+    {
+        return view('parent.requestdemo');
+    }
+
+    public function acceptedtutor()
+    {
+       return view('parent.acceptedtutor');
+    }
+
+    public function booking(){
+        return view('parent.booking');
+    }
+
+    public function parentprofile()
+    {
+        return view('parent.create');
     }
 }

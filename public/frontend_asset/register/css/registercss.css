@@ -120,7 +120,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+h3,h5 {
   font-size: 3em;
   text-align: center;
   color: #fff;
@@ -146,8 +146,7 @@ h1 {
   padding: 3em;
 }
 
-input[type="text"], input[type="email"], input[type="password"],input[type="number"], select, input[type="file"], 
-optgroup {
+input[type="text"], input[type="email"], input[type="password"],input[type="number"], select, input[type="file"]{
   font-size: 0.9em;
   color: #fff;
   font-weight: 100;

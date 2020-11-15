@@ -1,4 +1,5 @@
 @extends('tutor.tutortemplate')
+   <link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
 @section('content')  
     <!-- main -->
     <div class="container">
@@ -34,8 +35,8 @@
                     <td>English</td>
                     <td>12.2.2002 10:PM </td>
                     <td>As quickly as you can</td>
-                    <td><button class="btn btn-info">Confirm</button>
-                      <button class="btn btn-info">Cancel</button></td>
+                    <td><button class="btn btn-success">Confirm</button>
+                      <button class="btn btn-success">Cancel</button></td>
                   </tr> 
                 </tbody>
     		</table>

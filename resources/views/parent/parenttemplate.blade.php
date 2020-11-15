@@ -48,12 +48,12 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#">Booking</a></li>
-          <li><a href="#">Requested Demo</a></li>
-          <li><a href="#">AcceptedTutors</a></li>
+          <li class="active"><a href="{{route('parenthomepage')}}">Home</a></li>
+          <li><a href="{{route('bookingpage')}}">Booking</a></li>
+          <li><a href="{{route('parentrequest')}}">Requested Demo</a></li>
+          <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li>
           <li><a href="#">Feedback</a></li>
-          <li><a href="#">My Profile</a></li>
+          <li><a href="{{route('parentprofile')}}">Add Profile</a></li>
 
 
         </ul>
