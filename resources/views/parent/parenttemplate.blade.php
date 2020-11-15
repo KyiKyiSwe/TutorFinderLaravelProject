@@ -8,6 +8,7 @@
   <title>Online Private Tutor Finder</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
   <link href="{{asset('frontend_asset/assets/img/favicon.png')}}" rel="icon">

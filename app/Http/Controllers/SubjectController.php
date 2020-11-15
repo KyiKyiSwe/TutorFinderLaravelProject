@@ -14,7 +14,7 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        //
+        return view('subject.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class SubjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('subject.create');
     }
 
     /**
@@ -35,7 +35,42 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+
+        $request->validate([
+            
+            "name"=>"required|min:4",
+            
+            "fee" => "required",
+            "course"=>"required|mimes:pdf",
+            "hours" => "required"
+
+        ]);
+
+        //if the file include, please upload (eg:input type="file")
+        if ($request->file()) {
+
+            //78748785858_bella.jpg
+            $fileName = time().'_'.$request->course->getClientOriginalName();
+            //categoryimg/78748785858_bella.jpg
+            $filepath =$request->file('course')->storeAs('coursepdf',$fileName,'public');
+            $path ='/storage/'.$filepath;
+        }
+
+            $subject =new Subject;
+            $subject->name = $request->name;
+
+
+            $subject->attach(['fee'=>'fee']);
+            $subject->attach(['course'=>'$path']);
+            $subject->attach(['hours'=>'hours']);
+
+        
+            $subject->save();
+
+            return redirect()->route('subject.index');
+
+
     }
 
     /**
@@ -46,7 +81,7 @@ class SubjectController extends Controller
      */
     public function show(Subject $subject)
     {
-        //
+        
     }
 
     /**

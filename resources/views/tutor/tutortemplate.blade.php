@@ -8,6 +8,7 @@
   <title>Online Private Tutor Finder</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Favicons -->
   <link href="{{asset('frontend_asset/assets/img/favicon.png')}}" rel="icon">
@@ -48,12 +49,12 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
-          <li><a href="#">Subject</a></li>
+          <li class="active"><a href="{{route('tutor.index')}}">Home</a></li>
+          <li><a href="{{route('subject.index')}}">Subject</a></li>
           <li><a href="{{route('tutorrequestpage')}}">Demo Request</a></li>
           <li><a href="{{route('tutorappointedpage')}}">Appointed Tutor</a></li>
           <li><a href="{{route('feedbackformpage')}}">Feedback</a></li>
-          <li><a href="{{route('tutorprofilepage')}}">My Profile</a></li>
+          <li><a href="{{route('tutor.create')}}">Add Profile</a></li>
 
         </ul>
       </nav><!-- .nav-menu -->
