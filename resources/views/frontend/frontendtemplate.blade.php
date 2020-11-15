@@ -51,19 +51,50 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="nav-item">
-            <a href="{{route('frontendpage')}}">Home</a>
+            <a class="nav-link" href="{{route('frontendpage')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('aboutpage')}}">About</a>
+            <a class="nav-link" href="{{route('aboutpage')}}">About</a>
+          </li>
+
+          @auth
+          <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+          @else
+            <li class="nav-item">
+            <a class="nav-link" href="{{route('loginuserpage')}}">Login</a>
           </li>
           <li class="nav-item">
-            <a href="{{route('loginstartpage')}}">Login</a>
+            <a class="nav-link" href="{{route('registerpage')}}">Register</a>
+          </li>
+          @endauth
+
+          </li>
+
+
+          {{-- <li class="nav-item">
+            <a href="{{route('loginuserpage')}}">Login</a>
           </li>
           <li class="nav-item">
             <a href="{{route('registerpage')}}">Register</a>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a href="{{route('contactpage')}}">Contact</a>
+            <a class="nav-link" href="{{route('contactpage')}}">Contact</a>
           </li>
 
         </ul>

@@ -49,12 +49,48 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{route('tutor.index')}}">Home</a></li>
-          <li><a href="{{route('subject.index')}}">Subject</a></li>
-          <li><a href="{{route('tutorrequestpage')}}">Demo Request</a></li>
-          <li><a href="{{route('tutorappointedpage')}}">Appointed Tutor</a></li>
-          <li><a href="{{route('feedbackformpage')}}">Feedback</a></li>
-          <li><a href="{{route('tutor.create')}}">Add Profile</a></li>
+          <li class="active">
+              <a href="{{route('tutorprofile.index')}}">Home</a>
+          </li>
+          <li>
+              <a href="{{route('subject.index')}}">Subject</a>
+          </li>
+          <li>
+              <a href="{{route('tutorrequestpage')}}">Demo Request</a>
+          </li>
+          <li>
+              <a href="{{route('tutorappointedpage')}}">Appointed Tutor</a>
+          </li>
+          <li>
+              <a href="{{route('feedbackformpage')}}">Feedback</a>
+          </li>
+          <li>
+              <a href="{{route('tutorprofile.create')}}">Add Profile</a>
+          </li>
+
+          @auth
+          <li class=" dropdown">
+              <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+          
+          @endauth
+
+          </li>
+
 
         </ul>
       </nav><!-- .nav-menu -->

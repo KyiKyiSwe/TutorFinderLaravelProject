@@ -21,12 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontendController@frontend')->name('frontendpage');
 Route::get('about', 'FrontendController@about')->name('aboutpage');
 Route::get('contact', 'FrontendController@contact')->name('contactpage');
-Route::get('loginstart', 'FrontendController@loginstart')->name('loginstartpage');
 
 
 Route::get('singup', 'FrontendController@singup')->name('registerpage');
+Route::get('loginuser','FrontendController@loginuser')->name('loginuserpage');
 
-Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
 
@@ -44,15 +43,16 @@ Route::resource('user','UserController');
 Route::resource('userparent','UserparentController');
 Route::resource('usertutor','UsertutorController');
 Route::resource('subject','SubjectController');
+Route::resource('tutorprofile','TutorprofileController');
 
 
 
 // for parent 
-Route::get('parenthome', 'FrontendController@parenthome')->name('parenthomepage');
+
 Route::get('parentrequest', 'FrontendController@parentrequest')->name('parentrequest');
 Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedtutor');
 Route::get('booking', 'FrontendController@booking')->name('bookingpage');
-//Route::get('parentprofile', 'FrontendController@parentprofile')->name('parentprofile');
+
 
 
 //for tutor
@@ -60,10 +60,10 @@ Route::get('booking', 'FrontendController@booking')->name('bookingpage');
 Route::get('feedbackform','TutorController@feedbackform')->name('feedbackformpage');
 Route::get('tutorappointed','TutorController@tutorappointed')->name('tutorappointedpage');
 Route::get('tutorrequest','TutorController@tutorrequest')->name('tutorrequestpage');
-// Route::get('tutorsubject','TutorController@tutorsubject')->name('tutorsubjectpage');
-Route::get('tutorstore','TutorController@store')->name('tutor.store');
+
+
 
 //Authentication
 Auth::routes(['register'=>false]);
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 

@@ -49,12 +49,35 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{route('parenthomepage')}}">Home</a></li>
+          <li class="active"><a href="{{route('userparent.index')}}">Home</a></li>
           <li><a href="{{route('bookingpage')}}">Booking</a></li>
           <li><a href="{{route('parentrequest')}}">Requested Demo</a></li>
           <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li>
           <li><a href="#">Feedback</a></li>
           <li><a href="{{route('userparent.create')}}">Add Profile</a></li>
+
+          @auth
+          <li class="dropdown">
+              <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                  {{ Auth::user()->name }}
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                      @csrf
+                  </form>
+              </div>
+          </li>
+          
+          @endauth
+
+          </li>
 
 
         </ul>
