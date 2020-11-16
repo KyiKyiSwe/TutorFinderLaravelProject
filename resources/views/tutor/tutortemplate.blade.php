@@ -56,13 +56,11 @@
               <a href="{{route('subject.index')}}">Subject</a>
           </li>
           <li>
-              <a href="{{route('tutorrequestpage')}}">Demo Request</a>
+              <a href="{{route('requesttutor.index')}}">Request & Appointed</a>
           </li>
+          
           <li>
-              <a href="{{route('tutorappointedpage')}}">Appointed Tutor</a>
-          </li>
-          <li>
-              <a href="{{route('feedbackformpage')}}">Feedback</a>
+              <a href="{{route('feedback.index')}}">Feedback</a>
           </li>
           <li>
               <a href="{{route('tutorprofile.create')}}">Add Profile</a>

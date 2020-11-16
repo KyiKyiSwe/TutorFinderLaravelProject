@@ -27,18 +27,19 @@ Route::get('contact', 'FrontendController@contact')->name('contactpage');
 Route::get('singup', 'FrontendController@singup')->name('registerpage');
 Route::get('loginuser','FrontendController@loginuser')->name('loginuserpage');
 
-//Route::get('loginall', 'FrontendController@loginall')->name('loginallpage');
+
 
 Route::get('tutorregister', 'FrontendController@tutorregister')->name('tutorregister');
 Route::get('parentregister', 'FrontendController@parentregister')->name('parentregister');
 
 
 //for backend admin
-Route::get('viewparent','BackendController@viewparent')->name('viewparentpage');
-Route::get('viewappointment','BackendController@viewappointment')->name('viewappointmentpage');
-Route::get('viewtutor','BackendController@viewtutor')->name('viewtutorpage');
-Route::get('showdetail/{id}','BackendController@showdetail')->name('showdetailpage');
-Route::get('index','BackendController@index')->name('indexpage');
+Route::get('viewparent','BackController@viewparent')->name('viewparentpage');
+Route::get('viewappointment','BackController@viewappointment')->name('viewappointmentpage');
+Route::get('viewtutor','BackController@viewtutor')->name('viewtutorpage');
+Route::get('showdetail/{id}','BackController@showdetail')->name('showdetailpage');
+Route::get('index','BackController@index')->name('indexpage');
+Route::post('confirm/{id}','RequestTutorController@confirm')->name('requesttutor.confirm');
 
 
 Route::resource('tutor','TutorController');
@@ -47,7 +48,9 @@ Route::resource('userparent','UserparentController');
 Route::resource('usertutor','UsertutorController');
 Route::resource('subject','SubjectController');
 Route::resource('tutorprofile','TutorprofileController');
-
+Route::resource('feedback','feedbackreplyController');
+Route::resource('backend','BackController');
+Route::resource('requesttutor','RequestTutorController');
 
 
 // for parent 
@@ -61,9 +64,9 @@ Route::get('booking', 'FrontendController@booking')->name('bookingpage');
 
 //for tutor
 
-Route::get('feedbackform','TutorController@feedbackform')->name('feedbackformpage');
+// Route::get('feedbackform','TutorController@feedbackform')->name('feedbackformpage');
 Route::get('tutorappointed','TutorController@tutorappointed')->name('tutorappointedpage');
-Route::get('tutorrequest','TutorController@tutorrequest')->name('tutorrequestpage');
+// Route::get('tutorrequest','TutorController@tutorrequest')->name('tutorrequestpage');
 
 
 

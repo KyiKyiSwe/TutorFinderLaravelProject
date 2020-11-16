@@ -11,9 +11,13 @@ class Subject extends Model
     public function tutors()
   {
       return $this->belongsToMany('App\Tutor','sub_tutors')
-      				->withPivot('fee'),
-      				->withPivot('course'),
-      				->withPivot('hours')
+      				->withPivot('fee','course','hours')
+      				// ->withPivot('course')
+      				// ->withPivot('hours')
       				->withTimestamps();
+  }
+  public function feedback()
+  {
+      return $this->belongsTo('App\Feedback');
   }
 }

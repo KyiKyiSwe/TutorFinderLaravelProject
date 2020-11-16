@@ -24,7 +24,7 @@
 
                   <div class="form-group">
                     <label>Subject:</label>
-                    <input type="text" name="subject" class="form-control @error('subject') is-invalid @enderror" placeholder="Enter subject" value="{{old('subject')}}">
+                    <input type="text" name="name" class="form-control @error('subject') is-invalid @enderror" placeholder="Enter subject" value="{{old('name')}}">
                     @error('subject')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                   <div class="form-group">
                     <label>Hours:</label>
                     <input type="text" name="hours" class="form-control @error('hours') is-invalid @enderror" placeholder="Enter hours" value="{{old('hours')}}">
-                    @error('address')
+                    @error('hours')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                       </span>

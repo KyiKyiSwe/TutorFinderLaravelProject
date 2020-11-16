@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Level;
 use App\Grade;
 use App\User;
+use App\Request_tutor;
+use App\Userparent;
 
 class TutorController extends Controller
 {
@@ -17,8 +19,8 @@ class TutorController extends Controller
      */
     public function index()
     {
-        // $tutors=Tutor::all();
-        // return view('tutor.index',compact('tutors'));
+        $tutors=Tutor::all();
+        return view('backendadmin.index',compact('tutors'));
     }
     
     
@@ -46,44 +48,7 @@ class TutorController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
-     //    $request->validate([
         
-     //        "photo"=>"required|mimes:jpeg,bmp,png",
-     //        "phone"=>"required",
-     //        "school" =>"required",
-     //        "qualification" => "required",
-     //        "address" =>"required",
-     //        "city" => "required",
-     //        "level" => "required",
-     //        "grade" => "required",
-     //        "name" =>"required"
-     //    ]);
-
-     //    //if the file include, please upload (eg:input type="file")
-     //    if ($request->file()) {
-
-     //        //78748785858_bella.jpg
-     //        $fileName = time().'_'.$request->photo->getClientOriginalName();
-     //        //categoryimg/78748785858_bella.jpg
-     //        $filepath =$request->file('photo')->storeAs('tutorimg',$fileName,'public');
-     //        $path ='/storage/'.$filepath;
-     //    }
-
-     //        $tutor =new Tutor;
-     //        $tutor->photo = $path;
-     //        $tutor->phoneno = $request->phone;
-     //        $tutor->schoolname = $request->school;
-     //        $tutor->qualification = $request->qualification;
-     //        $tutor->address = $request->address;
-     //        $tutor->city = $request->city;
-     //        $tutor->level_id =$request->level;
-     //        $tutor->grade_id = $request->grade;
-     //        $tutor->user_id = $request->user;
-
-     //        $tutor->save();
-
-     // return redirect()->route('tutor.index');
     }
 
     /**
@@ -173,21 +138,21 @@ class TutorController extends Controller
          return redirect()->route('tutor.index');
     }
 
-    public function feedbackform()
-    {
-       
-        return view('tutor.feedbackform');
-    }
+    
     public function tutorappointed()
     {
        
         return view('tutor.tutorappointed');
     }
-    public function tutorrequest()
+  
+
+    public function viewparent()
     {
-       
-        return view('tutor.tutorrequest');
+
+        return view('tutor.viewparent');
     }
+
+     
      
 
       

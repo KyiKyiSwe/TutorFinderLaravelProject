@@ -12,8 +12,6 @@
                   <tr>
                     <th>No</th>
                     <th>Parent Name</th>
-                    {{-- <th>Level</th>
-                    <th>Grade</th> --}}
                     <th>Subject</th>
                     <th>Comment</th>
                     <th>Date</th>
@@ -23,30 +21,29 @@
                 <tbody>
                   @php 
                     $i=1;
+                    //var_dump($feedback);
                   @endphp
-                  @foreach($feedbacks as $row)
+
+                  {{-- to show auth user feedback --}}
+
+
+                  @foreach($feedback as $row)
+                  
+                  
                   <tr>
                     <td>{{$i++}}</td>
-                    <td>{{$row->sub_tutor->tutor->user->name}}</td>
-                    {{-- <td>
-                      Primary 
-                    </td>
-                    <td>Grade 2</td> --}}
-                    <td>{{$row->sub_tutor->subject->name}}</td>
+                    <td>{{$row->userparent->user->name}}</td>
+                    @foreach($tutors->subjects as $value)
+                    <td>{{$value}}</td>
+                    @endforeach
+
                     <td>{{$row->comment}}</td>
-                    <td>{{$ldate = new DateTime('now')}}</td>
+
+
+                    <td>date</td>
                   </tr> 
                   @endforeach
-
-                  {{-- <td>{{$i++}}</td>
-                    <td>Daw Mya Mya</td>
-                    <td>
-                      Primary 
-                    </td>
-                    <td>Grade 2</td>
-                    <td>English</td>
-                    <td>Good </td>
-                    <td>12.2.2002</td> --}}
+                  
 
                 </tbody>
     		</table>

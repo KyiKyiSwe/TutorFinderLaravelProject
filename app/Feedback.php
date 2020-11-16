@@ -12,4 +12,8 @@ class Feedback extends Model
   {
       return $this->belongsTo('App\Userparent');
   }
+  public function subject()
+  {
+      return $this->belongsTo('App\Subject','sub_tutors');
+  }
 }

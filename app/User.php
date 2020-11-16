@@ -38,4 +38,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function userparent()
+  {
+      return $this->belongsTo('App\userparent');
+  }
+  public function tutor()
+  {
+      return $this->hasOne('App\Tutor');
+  }
 }

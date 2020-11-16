@@ -100,10 +100,11 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profile</a>
+                  {{-- <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="#">Log out</a> --}}
+                  
                 </div>
 
               </li>
@@ -114,7 +115,7 @@
 
       <!-- End Navbar -->
       
-<div class="row mt-5 ml-5">
+<div class="row mt-5">
   
     
            @yield('content')

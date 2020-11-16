@@ -3,7 +3,7 @@
 
 	
   <div class="content">
-        <div class="container-fluid  mt-5">
+        <div class="container-fluid ml-5 mt-5">
           <div class="row ">
             <div class="col-md-12">
               <div class="card">
@@ -54,7 +54,7 @@
                           <th>Julia</th>
                           <th>{{$row->phoneno}}</th>
                           
-                          <th><a href="{{-- {{route('Backendadmin.showdetail',$row->id)}} --}}" class="btn btn-info">Detail</a></th>
+                          <th><a href="{{route('tutor.showdetail',$row->id)}}" class="btn btn-info">Detail</a></th>
                           <th>
                             <form method="post" action="" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
             @csrf

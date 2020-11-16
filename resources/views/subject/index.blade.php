@@ -11,10 +11,10 @@
                 <thead>
                   <tr>
                     <th>No</th>
-                    <th>Grade</th>
+                    
                     <th>Subject</th>
                     <th>Fee</th>
-                    <th>PDF File</th>
+                    
                     <th>Hours</th>
                     <th>Action</th>
                      
@@ -24,20 +24,21 @@
                   @php 
                     $i=1;
                   @endphp
-                  
+                  @foreach($subject as $row)
                   <tr>
                     <td>{{$i++}}</td>
-                    <td>Primary</td>
-                    <td>Science</td>
+                  
+                    <td>{{$row->name}}</td>
                     <td>
-                      $59
+                      {{-- {{$subject->pivot->fee}} --}}
                     </td>
-                    <td>30 hours</td>
-                    <td>File</td>
+                    <td></td>
+                   
                     
                     <td><button class="btn btn-info">Edit</button>
                       <button class="btn btn-info">Delete</button></td>
                   </tr> 
+                  @endforeach
                 </tbody>
     		</table>
 			</div>

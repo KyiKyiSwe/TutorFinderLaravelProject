@@ -17,8 +17,8 @@ class Userparent extends Model
       return $this->belongsTo('App\Request_tutor');
   }
 
-  // public function user()
-  // {
-	 //  return $this->belongsTo('App\User');
-  // }
+  public function user()
+  {
+	  return $this->belongsTo('App\User');
+  }
 }

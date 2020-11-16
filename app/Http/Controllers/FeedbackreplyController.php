@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Request_tutor;
+use App\Feedback;
 use Illuminate\Http\Request;
-use App\Userparent;
+use App\Subject;
+use App\Tutor;
 
-class RequestTutorController extends Controller
+
+class FeedbackreplyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,20 +17,10 @@ class RequestTutorController extends Controller
      */
     public function index()
     {
-       $requesttutor = Request_tutor::all();
-       $userparent =Userparent::all();
-       
-
-       //dd($requesttutor);
-
-
-       $pending_orders = Request_tutor::where('status',0)->get();
-       //dd($pending_orders);
-
-       $confirmed_orders = Request_tutor::where('status',1)->get();
-       //dd($confirmed_orders);
-   
-        return view('requesttutor.index',compact('requesttutor','userparent','pending_orders','confirmed_orders'));
+        $feedback = Feedback::all();
+        $subjects = Subject::all();
+        $tutors = Tutor::all();
+        return view('feedback.index',compact('feedback','subjects','tutors'));
     }
 
     /**
@@ -55,10 +47,10 @@ class RequestTutorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Request_tutor  $request_tutor
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function show(Request_tutor $request_tutor)
+    public function show(Feedback $feedback)
     {
         //
     }
@@ -66,10 +58,10 @@ class RequestTutorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Request_tutor  $request_tutor
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request_tutor $request_tutor)
+    public function edit(Feedback $feedback)
     {
         //
     }
@@ -78,10 +70,10 @@ class RequestTutorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Request_tutor  $request_tutor
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Request_tutor $request_tutor)
+    public function update(Request $request, Feedback $feedback)
     {
         //
     }
@@ -89,19 +81,11 @@ class RequestTutorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Request_tutor  $request_tutor
+     * @param  \App\Feedback  $feedback
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request_tutor $request_tutor)
+    public function destroy(Feedback $feedback)
     {
         //
-    }
-
-    public function confirm($id)
-    {
-        $request_tutor= Request_tutor::find($id);
-        $request_tutor->status =1;
-        $request_tutor->save();
-        return back();
     }
 }
