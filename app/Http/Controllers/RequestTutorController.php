@@ -35,7 +35,7 @@ class RequestTutorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

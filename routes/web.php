@@ -47,6 +47,7 @@ Route::resource('userparent','UserparentController');
 Route::resource('usertutor','UsertutorController');
 Route::resource('subject','SubjectController');
 Route::resource('tutorprofile','TutorprofileController');
+Route::resource('requesttutor','RequestTutorController');
 
 
 
@@ -56,6 +57,9 @@ Route::resource('tutorprofile','TutorprofileController');
 Route::get('parentrequest', 'FrontendController@parentrequest')->name('parentrequest');
 Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedtutor');
 Route::get('booking', 'FrontendController@booking')->name('bookingpage');
+Route::post('filter', 'FrontendController@filterGrade')->name('filterGrade');
+Route::get('tutordetail/{id}', 'FrontendController@tutordetail')->name('tutordetail');
+
 
 
 

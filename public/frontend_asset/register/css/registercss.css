@@ -43,6 +43,8 @@ a {
   text-decoration: none;
 }
 
+ 
+
 .txt-rt {
   text-align: right;
 }
@@ -169,6 +171,11 @@ input[type="text"], input[type="email"], input[type="password"],input[type="numb
 label{
   color: #fff;
 }
+
+label.radio{
+  color: black;
+}
+
 input.email, input.text.w3lpass {
   margin: 2em 0;
 }
