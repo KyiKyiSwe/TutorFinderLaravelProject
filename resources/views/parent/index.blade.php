@@ -6,7 +6,7 @@
   <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
-      <h2>We are team of talanted designers making websites with Bootstrap</h2>
+      {{-- <h2>We are team of talanted designers making websites with Bootstrap</h2> --}}
     </div>
   </section><!-- End Hero -->
 
@@ -16,7 +16,7 @@
     <section id="trainers" class="trainers">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
+        {{-- <div class="section-title">
           <h2>Your Profile</h2>
           <p>Profile</p>
         </div>
@@ -36,14 +36,14 @@
                 </div>
                 <div class="card-footer">
 
-                    <a href="{{-- {{route('userparent.edit',$userparents->id)}} --}}" class="btn btn-success">Edit</a> 
+                    {{-<a href="{{- {{route('userparent.edit',$userparents->id)}} --}} {{-- class="btn btn-success">Edit</a> 
                     <a href="" class="btn btn-success">Delete</a>        
                 </div>
             </div>
           </div>
-        </div>
+        </div> --}} 
     <!-- /.row -->
-        <hr class="my-5">
+       {{--  <hr class="my-5"> --}}
 
         <div class="section-title my-3">
           <h2>Tutors</h2>
@@ -64,7 +64,7 @@
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  {{-- <a href=""><i class="icofont-linkedin"></i></a> --}}
                 </div>
               </div>
             </div>
@@ -83,7 +83,7 @@
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  {{-- <a href=""><i class="icofont-linkedin"></i></a> --}}
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
                   <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  {{-- <a href=""><i class="icofont-linkedin"></i></a> --}}
                 </div>
               </div>
             </div>
@@ -120,17 +120,17 @@
         <div class="row counters">
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">1232</span>
+            <span data-toggle="counter-up">135</span>
             <p>Students</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">64</span>
+            <span data-toggle="counter-up">50</span>
             <p>Parents</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
+            <span data-toggle="counter-up">30</span>
             <p>Tutors</p>
           </div>
 

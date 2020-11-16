@@ -9,10 +9,11 @@
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  
 
   <!-- Favicons -->
-  <link href="{{asset('frontend_asset/assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('frontend_asset/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('frontend_asset/assets/img/')}}" rel="icon">
+  <link href="{{asset('frontend_asset/assets/img/')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -43,7 +44,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo mr-auto"><a href="index.html">Online Private Tutor Finder System</a></h1>
+      <h1 class="logo mr-auto"><a href="">Tutor Finder System</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -107,15 +108,14 @@
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/mentor-free-education-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by K&P
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -135,6 +135,8 @@
 
   <!-- Template Main JS File -->
   <script src="{{asset('frontend_asset/assets/js/main.js')}}"></script>
+
+  @yield('script')
 
 </body>
 

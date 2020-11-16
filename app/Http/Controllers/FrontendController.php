@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Grade;
+use App\Tutor;
+use App\User;
+use App\Subject;
 
 class FrontendController extends Controller
 {
@@ -61,12 +65,33 @@ class FrontendController extends Controller
        return view('parent.acceptedtutor');
     }
 
-    public function booking(){
-        return view('parent.booking');
+    public function booking()
+    {   
+        $grades = Grade::all();
+        $tutors = Tutor::all();
+        $users = User::all();
+        return view('parent.booking',compact('grades','tutors','users'));
     }
 
     // public function parentprofile()
     // {
     //     return view('parent.create');
     // }
+    public function filterGrade(Request $request)
+    {
+        $gid = $request->gid;
+        $tutors = Tutor::where('grade_id',$gid)->with('user')->get();
+        // $tutorid = Tutor::find($id);
+        // $username = Tutor::where('user_id',$tutorid);
+        // dd($username);
+        return $tutors;
+
+    }
+
+    public function tutordetail($id)
+    {   
+        $tutor = Tutor::find($id);
+        $subject = Subject::find($id);
+        return view('parent.tutordetail',compact('tutor','subject'));
+    }
 }

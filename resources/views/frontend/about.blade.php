@@ -46,17 +46,17 @@
         <div class="row counters">
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">1232</span>
+            <span data-toggle="counter-up">135</span>
             <p>Students</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">64</span>
+            <span data-toggle="counter-up">50</span>
             <p>Parents</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">15</span>
+            <span data-toggle="counter-up">30</span>
             <p>Tutors</p>
           </div>
 

@@ -25,8 +25,10 @@ class Tutor extends Model
       				// ->withPivot('hours')
       				->withTimestamps();
   }
+
   public function user()
   {
       return $this->belongsTo('App\User');
   }
+
 }
