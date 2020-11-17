@@ -12,5 +12,13 @@ class Level extends Model
   {
       return $this->hasMany('App\Grade');
   }
+   public function tutor()
+  {
+      return $this->hasMany('App\Tutor');
+  }
+  public function requesttutor()
+  {
+      return $this->hasOne('App\Level');
+  }
   
 }

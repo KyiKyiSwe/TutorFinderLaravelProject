@@ -3,14 +3,14 @@
 
 	
   <div class="content">
-        <div class="container-fluid mt-5">
+        <div class="container-fluid mt-5 mx-5">
           <div class="row ">
             <div class="col-md-12">
               <div class="card">
 
                 <div class="card-header card-header-primary">
                   <h4 class="card-title text-center">Appointment Detail Information</h4>
-                  <p class="card-category"> Here is a subtitle for this table</p>
+                  <p class="card-category"> The information about appointment that send from customer</p>
                 </div>
 
                 <div class="card-body">
@@ -41,15 +41,11 @@
                         <th>
                           Start Date
                         </th>
-                        <th>
-                          Start Time
-                        </th>
+                        
                         <th>
                           Request Status
                         </th>
-                        <th>
-                          Payment Status
-                        </th>
+                        
                        
                       </thead>
 
@@ -58,22 +54,20 @@
                           $i=1;
                           @endphp
 
-                          
+                      @foreach($requesttutor as $row)                          
                         <tr class="text-center">
                           <th>{{$i++}}</th>
-                          <th>1</th>
-                          <th>Daw Mya Mya</th>                          
-                          <th>Mrs. Julia</th>
-                          <th>Primary</th>
-                          <th>Grade2</th>
-                          <th>Maths</th>
-                          <th>12.11.2020</th>
-                          <th>9:00 AM</th>
-                          <th>Confirm</th>
-                          <th>Paid</th>
-                          
-                          
+                          <th>{{$row->id}}</th>
+                          <th>{{$row->userparent->name}}</th>                          
+                          <th>{{$row->tutor->name}}</th>
+                          <th>{{-- {{$row->level->name}} --}}</th>
+                          <th>{{-- {{$row->tutor->level->name}} --}}</th>
+                          <th>{{-- {{$row->subject->name}} --}}subject</th>
+                          <th>{{$row->requestdate}}</th>
+
+                          <th>{{$row->status}}</th>  
                         </tr>
+                        @endforeach
                    </tbody>
                     </table>
                   </div>

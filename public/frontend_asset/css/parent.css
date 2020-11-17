@@ -18,3 +18,8 @@ html, body {
   font: inherit;
   vertical-align: baseline;
 }
+
+a.pending, a.confirm
+{
+  color: black;
+}

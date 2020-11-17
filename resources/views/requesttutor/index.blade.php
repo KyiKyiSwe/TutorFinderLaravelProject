@@ -2,9 +2,9 @@
 <link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
 @section('content')  
 <!-- main -->
-<div class="container">
+<div class="container py-5">
 <div class="main-w3layouts wrapper my-5">
-<h1>Demo Request Detail</h1>
+
 <div class="main-agileinfo">
    <div class="agileits-top">
       <div class="row">
@@ -13,10 +13,10 @@
                <h3 class="d-inline-block my-3">Request List</h3>
                <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
-                     <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending</a>
+                     <a class="nav-link active pending" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending</a>
                   </li>
                   <li class="nav-item" role="presentation">
-                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Confirm</a>
+                     <a class="nav-link confirm" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Confirm</a>
                   </li>
                </ul>
                <div class="tab-content mt-3" id="myTabContent">
@@ -49,12 +49,12 @@
                                   @if($row->status == 0)
                                  <form method="post" action="{{route('requesttutor.confirm',$row->id)}}">
                                     @csrf
-                                    <button class="btn btn-info" type="submit">Confirm</button>
-                                    <a href="{{route('requesttutor.index')}}" class="btn btn-info">Back</a>
+                                    <button class="btn btn-success" type="submit">Confirm</button>
+                                    <a href="{{route('requesttutor.index')}}" class="btn btn-success">Back</a>
                                  </form>
                                  @elseif($row->status ==1)
                                  <button class="btn btn-success">Success Order</button>
-                                 <a href="{{route('requesttutor.index')}}" class="btn btn-info">Back</a>
+                                 <a href="{{route('requesttutor.index')}}" class="btn btn-success">Back</a>
                                  @endif
                               </td>
                            </tr>
