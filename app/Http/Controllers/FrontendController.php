@@ -7,6 +7,8 @@ use App\Grade;
 use App\Tutor;
 use App\User;
 use App\Subject;
+use App\Request_tutor;
+
 
 class FrontendController extends Controller
 {
@@ -56,8 +58,13 @@ class FrontendController extends Controller
     // }
     
     public function parentrequest()
-    {
-        return view('parent.requestdemo');
+    {   
+       $requesttutor = Request_tutor::all();
+       $tutor =Tutor::all();
+       $pending_orders = Request_tutor::where('status',0)->get();
+       $confirmed_orders = Request_tutor::where('status',1)->get();
+       //dd($confirmed_orders);
+        return view('parent.requestdemo',compact('requesttutor','tutor','pending_orders','confirmed_orders'));
     }
 
     public function acceptedtutor()
@@ -93,5 +100,10 @@ class FrontendController extends Controller
         $tutor = Tutor::find($id);
         $subject = Subject::find($id);
         return view('parent.tutordetail',compact('tutor','subject'));
+    }
+
+    public function parentfeedback($id)
+    {
+        return view('parent.feedback');
     }
 }

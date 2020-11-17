@@ -1,45 +1,110 @@
 @extends('parent.parenttemplate')
-   <link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
+<link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
 @section('content')  
-    <!-- main -->
-    <div class="container my-5 py-5">
-    	<div class="main-w3layouts wrapper my-3 py-5">
-		    <h3>RequestedTutor Detail</h3>
-		    <div class="main-agileinfo">
-			    <div class="agileits-top">
-			       <table class="table mt-5 table-bordered dataTable my-5 py-5">
-                <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>Tutor Name</th>
-                    <th>Level</th>
-                    <th>Grade</th>
-                    <th>Subject</th>
-                    <th>Note</th>
-                    <th>Status</th>    
-                  </tr>
-                </thead>
-                <tbody>
-                  @php 
-                    $i=1;
-                  @endphp
-                  
-                  <tr>
-                    <td>{{$i++}}</td>
-                    <td>Daw Mya Mya</td>
-                    <td>
-                      Primary 
-                    </td>
-                    <td>Grade 2</td>
-                    <td>English</td>
-                    <td>As quickly as you can</td>
-                    <td>Pending</td>
-                  </tr> 
-                </tbody>
-    		     </table>
-			    </div>
-		    </div>	
-	    </div>
-    </div>
-  	
+<!-- main -->
+<div class="container py-5">
+<div class="main-w3layouts wrapper my-5">
+
+  <div class="main-agileinfo">
+   <div class="agileits-top">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="tile text-center">
+               <h3 class="d-inline-block my-3">Request List</h3>
+               <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link active pending" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Requested Tutors</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                     <a class="nav-link confirm" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Accepted Tutors</a>
+                  </li>
+               </ul>
+               <div class="tab-content mt-3" id="myTabContent">
+                  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                     <table class="table mt-3 table-bordered dataTable">
+                        <thead>
+                           <tr>
+                              <th>No</th>
+                              <th>Tutor Name</th>
+                              <th>Subject</th>
+                              <th>Date & Time</th>
+                              <th>Note</th>
+                              {{-- <th>Status</th> --}}
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @php 
+                           $i=1;
+                           @endphp
+                           @foreach($pending_orders as $row)
+                           <tr>
+                              <td>{{$i++}}</td>
+                              <td>{{$row->tutor->user->name}}</td>
+                              <td>
+                                 English
+                              </td>
+                              <td>{{$row->requestdate}}</td>
+                              <td>{{$row->note}}</td>
+                              {{-- <td>
+                                  @if($row->status == 0)
+                                 <form method="post" action="{{route('requesttutor.confirm',$row->id)}}">
+                                    @csrf
+                                    <button class="btn btn-success" type="submit">Confirm</button>
+                                    <a href="{{route('requesttutor.index')}}" class="btn btn-success">Back</a>
+                                 </form>
+                                 @elseif($row->status ==1)
+                                 <button class="btn btn-success">Success Order</button>
+                                 <a href="{{route('requesttutor.index')}}" class="btn btn-success">Back</a>
+                                 @endif
+                              </td> --}}
+                           </tr>
+                           @endforeach
+                        </tbody>
+                     </table>
+                  </div>
+                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                     <table class="table mt-3 table-bordered dataTable">
+                        <thead>
+                           <tr>
+                              <th>No</th>
+                              <th>Tutor Name</th>
+                              <th>Subject</th>
+                              <th>Date & Time</th>
+                              <th>Note</th>
+                              <th>Action</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           @php 
+                           $i=1;
+                           @endphp
+                           @foreach($confirmed_orders as $row)
+                           <tr>
+                              <td>{{$i++}}</td>
+                              <td>{{$row->tutor->user->name}}</td>
+                              <td>
+                                 English
+                              </td>
+                              <td>{{$row->requestdate}}</td>
+                              <td>{{$row->note}}</td>
+                              <td>
+                                 <a href="{{route('parentfeedback',$row->tutor->user->id)}}">
+                                    <button class="btn btn-success">
+                                      Feedback 
+                                    </button>                                     
+                                 </a>
+                              </td>
+                           </tr>
+                           @endforeach
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+  </div>
+</div>
+</div>
 @endsection

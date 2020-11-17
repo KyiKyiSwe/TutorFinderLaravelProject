@@ -15,7 +15,8 @@
 
                     <div class="form-group">
 		              <label>Name:</label>
-		              <select name="user" class="form-control">
+		              <input type="text" name="name" value="{{Auth::user()->name}}">
+		              {{-- <select name="user" class="form-control">
 		                <optgroup label="Choose User">
 
 		                  @foreach($users as $user)
@@ -23,7 +24,7 @@
 		                  @endforeach
 		         
 		                </optgroup>
-		              </select>
+		              </select> --}}
 		            </div>
 
 		            <div class="form-group">

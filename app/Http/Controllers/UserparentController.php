@@ -6,6 +6,7 @@ use App\Userparent;
 use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
+use App\Tutor;
 
 class UserparentController extends Controller
 {
@@ -17,7 +18,8 @@ class UserparentController extends Controller
     public function index()
     {
         $userparents = Userparent::all();
-        return view('parent.index',compact('userparents'));
+        $tutors = Tutor::all();
+        return view('parent.index',compact('userparents','tutors'));
     }
 
     /**
