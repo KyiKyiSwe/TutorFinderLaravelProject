@@ -2,9 +2,9 @@
 <link href="{{asset('frontend_asset/css/parent.css')}}" rel="stylesheet">
 @section('content')  
 <!-- main -->
-<div class="container">
-   <div class="main-w3layouts wrapper my-5">
-      <h1>Tutor Information Detail</h1>
+<div class="container my-5 text-center">
+   <div class="main-w3layouts wrapper py-5">
+      <h3>Tutor Information Detail</h3>
       <div class="main-agileinfo">
          <div class="agileits-top">
             <table class="table mt-5 table-bordered dataTable">
@@ -28,7 +28,12 @@
                   <tr>
                      <td>{{$i++}}</td>
                      <td>{{$row->userparent->user->name}}</td>
-                     <td>{{$row->sub_tutor_id->}}</td>
+
+           
+                     <td>{{-- {{$row->sub_tutor_id->pivot}} --}}
+                        {{$row->sub_tutor_id}}</td>
+            
+
                      <td>{{$row->comment}}</td>
                      <td>date</td>
                   </tr>

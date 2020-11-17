@@ -17,9 +17,19 @@ class SubjectController extends Controller
     public function index()
     {
         //$tutor_id = Auth::id();
-        $tu_id =Auth::id();
-        $subject = Subject::all();
-        return view('subject.index',compact('subject','tu_id'));
+
+        $authuser = Auth::user();  // take the user that login now
+
+        $tutor = $authuser->tutor;
+            
+        $tutorid = $tutor->id;
+        //$tu_id =Auth::id(); //userid
+
+        $tutor = Tutor::all();
+        $subjects= Subject::all();
+         // $pending_orders = Request_tutor::where('status',0)->get();
+
+        return view('subject.index',compact('tutorid','tutor','subjects'));
         
     }
 
@@ -115,7 +125,8 @@ class SubjectController extends Controller
      */
     public function edit(Subject $subject)
     {
-        //
+        return view('subject.edit',compact('subject'));
+        
     }
 
     /**
@@ -127,7 +138,44 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
-        //
+        if ($request->file()) {
+
+            //78748785858_bella.jpg
+            $fileName = time().'_'.$request->course->getClientOriginalName();
+            //categoryimg/78748785858_bella.jpg
+            $filepath =$request->file('course')->storeAs('coursepdf',$fileName,'public');
+            $path ='/storage/'.$filepath;
+        }else{
+            $path=$request->oldcourse;
+        }
+            // save into original table
+            $subject =new Subject;
+            $subject->name = $request->name;
+            $subject->save();
+
+            //dd($subject->name);
+            //die();
+
+            // $tutor =Tutor::find('id');
+            // $tutor->user_id = Auth::id();
+            // $tutor->save();
+            $authuser = Auth::user();  // take the user that login now
+
+            $tutor = $authuser->tutor;
+            // dd($authuser);
+            // die();
+
+            //dd($authuser,$tutor);
+            $tutor_id = $tutor->id;
+             //dd($tutor_id);
+            $subject->tutors()->attach($tutor_id,['fee'=>$request->fee,'course'=>$path,'hours'=>$request->hours]);
+
+            //dd($subject);
+
+         
+        
+            
+            return redirect()->route('subject.index');
     }
 
     /**

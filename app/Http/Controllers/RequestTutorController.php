@@ -16,6 +16,12 @@ class RequestTutorController extends Controller
      */
     public function index()
     {
+
+        $authuser = Auth::user();  // take the user that login now
+        $tutor = $authuser->tutor;
+        $tutorid = $tutor->id;
+
+
        $requesttutor = Request_tutor::all();
        $userparent =Userparent::all();
        
@@ -29,7 +35,7 @@ class RequestTutorController extends Controller
        $confirmed_orders = Request_tutor::where('status',1)->get();
        //dd($confirmed_orders);
    
-        return view('requesttutor.index',compact('requesttutor','userparent','pending_orders','confirmed_orders'));
+        return view('requesttutor.index',compact('requesttutor','userparent','pending_orders','confirmed_orders','tutorid'));
     }
 
     /**

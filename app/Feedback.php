@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Feedback extends Model
@@ -12,8 +13,10 @@ class Feedback extends Model
   {
       return $this->belongsTo('App\Userparent');
   }
+  //public $table = 'sub_tutors';
   public function subject()
   {
-      return $this->belongsTo('App\Subject','sub_tutors');
+      return $this->belongsTo('App\Subject','sub_tutors_id');
   }
+
 }

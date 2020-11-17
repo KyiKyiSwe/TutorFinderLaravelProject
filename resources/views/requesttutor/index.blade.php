@@ -11,6 +11,9 @@
          <div class="col-md-12">
             <div class="tile text-center">
                <h3 class="d-inline-block my-3">Request List</h3>
+
+              {{--  @if($requesttutor->tutor_id == $tutorid) --}}
+
                <ul class="nav nav-tabs" id="myTab" role="tablist">
                   <li class="nav-item" role="presentation">
                      <a class="nav-link active pending" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Pending</a>
@@ -37,11 +40,12 @@
                            $i=1;
                            @endphp
                            @foreach($pending_orders as $row)
+                           @if($row->id == $tutorid)
                            <tr>
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>
                               <td>
-                                 English
+                                 {{$row->id}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
@@ -58,6 +62,7 @@
                                  @endif
                               </td>
                            </tr>
+                            @endif
                            @endforeach
                         </tbody>
                      </table>
@@ -82,19 +87,23 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>
                               <td>
-                                 English
+                                 {{$row->id}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
                            </tr>
-                           @endforeach
+                           
+                          
+                           @endforeach 
                         </tbody>
                      </table>
+                     
                   </div>
                </div>
             </div>
          </div>
       </div>
+
    </div>
 </div>
 @endsection
