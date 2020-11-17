@@ -42,7 +42,7 @@ class User extends Authenticatable
 
     public function userparent()
   {
-      return $this->belongsTo('App\userparent');
+      return $this->hasOne('App\Userparent');
   }
   public function tutor()
   {

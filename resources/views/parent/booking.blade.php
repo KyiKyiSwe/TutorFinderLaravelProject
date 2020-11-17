@@ -36,7 +36,7 @@
 		            	@foreach($tutors as $tutor)
 		               <img src="{{asset($tutor->photo)}}" class="img-fluid" alt="">
 		               <h4>{{$tutor->user->name}}</h4>
-		               <p>{{$tutor->id}}</p>
+		               {{-- <p>{{$tutor->id}}</p> --}}
 
 		                {{-- @foreach($users as $user)
 		                <h4>
@@ -93,7 +93,7 @@
             html+=`<img src="${row.photo}" class="img-fluid" alt="">
                    <h4>${row.user.name}</h4>
                    <p>${row.id}</p>
-                   <a href="{{route('tutordetail',$tutor->id)}}" class="btn btn-success">Detail</a>`;
+                   <a href="/tutordetail/${row.id}" class="btn btn-success">Detail</a>`;
           }
           $('.tutor').prop('disabled',false);
           $('.member').html(html);

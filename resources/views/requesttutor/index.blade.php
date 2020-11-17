@@ -46,16 +46,16 @@
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
                               <td>
-                                 {{--  @if($requesttutor>status == 0)
+                                  @if($row->status == 0)
                                  <form method="post" action="{{route('requesttutor.confirm',$row->id)}}">
                                     @csrf
                                     <button class="btn btn-info" type="submit">Confirm</button>
                                     <a href="{{route('requesttutor.index')}}" class="btn btn-info">Back</a>
                                  </form>
-                                 @elseif($requesttutor->status ==1)
+                                 @elseif($row->status ==1)
                                  <button class="btn btn-success">Success Order</button>
                                  <a href="{{route('requesttutor.index')}}" class="btn btn-info">Back</a>
-                                 @endif --}}
+                                 @endif
                               </td>
                            </tr>
                            @endforeach

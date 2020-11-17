@@ -15,6 +15,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>Name: {{$tutor->user->name}}</h4>
+                <p>ID: {{$tutor->id}}</p>
                 <p>Address: {{$tutor->address}}</p>
                 <p>City: {{$tutor->city}}</p>
             </div>
@@ -35,11 +36,12 @@
                
             </div>
             <div class="card-footer">
-                <button class="btn btn-success d-block requestbtn" data-id={{$tutor->id}}>
-                   Request
-                </button>
+                
                 <textarea class="notes my-5" required="" placeholder="Any Request..."></textarea>
             </div>
+            <button class="btn btn-success d-block requestbtn" data-id={{$tutor->id}}>
+                   Request
+            </button>
 
         </div>
       </div>
@@ -62,13 +64,62 @@
                alert('ok');
               let notes = $('.notes').val();
               let id = $(this).data('id');
+              console.log(id);
               
               $.post("{{route('requesttutor.store')}}",{notes:notes,id:id},function (response) {
-                //console.log(response.msg);
+                console.log(response.msg);
                 //localStorage.clear();
-                //location.href="userparent";
+                location.href="/userparent";
               })
             })
           })
    </script>
 @endsection
+{{-- @section('script')
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+       
+      $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+      });
+
+      $('.requestbtn').click(function(){
+        var id = $(this).data('id');
+
+        var request = {
+          id:id
+        }
+        console.log(request);
+        var requestlist = localStorage.getItem("requests");
+        console.log(requestlist);
+
+        var RequestArray;
+        if(requestlist == null){
+            RequestArray = [];
+        }else{
+            RequestArray = JSON.parse(requestlist);
+        }
+
+        RequestArray.push(request);
+
+        var requeststring = JSON.stringify(RequestArray);
+        localStorage.setItem("requests",requeststring);
+      })
+
+      $('.sendbtn').click(function () {
+          //alert('ok');
+          let notes = $('.notes').val();
+          let request = localStorage.getItem('requests'); // JSON String
+          $.post("{{route('requesttutor.store')}}",{request:request,notes:notes},function (response) {
+              console.log(response.msg);
+              localStorage.clear();
+              location.href="userparent";
+          })
+        })
+
+    })
+  </script>
+@endsection() --}}

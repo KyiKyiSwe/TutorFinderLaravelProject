@@ -1,12 +1,12 @@
 @extends('tutor.tutortemplate')
 @section('content')  
     <!-- main -->
-    <div class="container">
+    <div class="container my-5 py-5">
     	<div class="main-w3layouts wrapper my-5">
 		<h1>Subject Detail</h1>
 		<div class="main-agileinfo">
 			<div class="agileits-top">
-        <a href="{{route('subject.create')}}" class="btn btn-info my-3 float-right">Add New</a>
+        <a href="{{route('subject.create')}}" class="btn btn-success my-3 float-right">Add New</a>
 			<table class="table mt-5 table-bordered dataTable">
                 <thead>
                   <tr>
@@ -35,8 +35,8 @@
                     <td></td>
                    
                     
-                    <td><button class="btn btn-info">Edit</button>
-                      <button class="btn btn-info">Delete</button></td>
+                    <td><button class="btn btn-success">Edit</button>
+                      <button class="btn btn-success">Delete</button></td>
                   </tr> 
                   @endforeach
                 </tbody>

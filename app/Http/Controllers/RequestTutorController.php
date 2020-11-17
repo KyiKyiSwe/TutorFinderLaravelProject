@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Request_tutor;
 use Illuminate\Http\Request;
 use App\Userparent;
+use Auth;
 
 class RequestTutorController extends Controller
 {
@@ -49,7 +50,30 @@ class RequestTutorController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        //dd($request);
+
+        //$myrequest = json_decode($request->request);
+        $notes = $request->notes;
+        $requestdate = date('Y-m-d');
+        $tutor_id = $request->id;
+
+        $requesttutor = new Request_tutor;
+        $requesttutor->requestdate = $requestdate;
+        $requesttutor->note = $notes;
+        //$requesttutor->userparent_id = Auth::id(); // current logined user_id
+
+        $authuser = Auth::user();
+          // take the user that login now
+        $parent = $authuser->userparent;
+        // dd($parent);
+        $userparent_id = $parent->id;
+        $requesttutor->userparent_id = $userparent_id;
+
+        $requesttutor->tutor_id = $tutor_id;
+        $requesttutor->save();
+
+        return response()
+            ->json(['msg' => 'Successful You Request!']);
     }
 
     /**
