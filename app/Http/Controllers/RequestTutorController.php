@@ -60,10 +60,12 @@ class RequestTutorController extends Controller
 
         //$myrequest = json_decode($request->request);
         $notes = $request->notes;
+        $subject = $request->subject;
         $requestdate = date('Y-m-d');
         $tutor_id = $request->id;
 
         $requesttutor = new Request_tutor;
+        
         $requesttutor->requestdate = $requestdate;
         $requesttutor->note = $notes;
         //$requesttutor->userparent_id = Auth::id(); // current logined user_id

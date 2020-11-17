@@ -65,6 +65,7 @@ Route::get('acceptedtutor', 'FrontendController@acceptedtutor')->name('acceptedt
 Route::get('booking', 'FrontendController@booking')->name('bookingpage');
 Route::post('filter', 'FrontendController@filterGrade')->name('filterGrade');
 Route::get('tutordetail/{id}', 'FrontendController@tutordetail')->name('tutordetail');
+Route::get('parentfeedback/{id}', 'FrontendController@parentfeedback')->name('parentfeedback');
 
 
 

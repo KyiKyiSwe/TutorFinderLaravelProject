@@ -15,14 +15,14 @@
         <div class="card">
             <div class="card-header">
                 <h4>Name: {{$tutor->user->name}}</h4>
-                <p>ID: {{$tutor->id}}</p>
+                {{-- <p>ID: {{$tutor->id}}</p> --}}
                 <p>Address: {{$tutor->address}}</p>
                 <p>City: {{$tutor->city}}</p>
             </div>
             <div class="card-body">
             	<label class="radio">Subject:</label>
             	@foreach($tutor->subjects as $subjects)
-            	<input type="radio" name="radio">
+            	<input type="radio" name="radio" value={{$subjects->name}}>
                 <label class="radio">
                 	{{$subjects->name}}
                 	 {{-- @if($subjects->pivot->subject_id == $subject->id)
@@ -40,7 +40,7 @@
                 <textarea class="notes my-5" required="" placeholder="Any Request..."></textarea>
             </div>
             <button class="btn btn-success d-block requestbtn" data-id={{$tutor->id}}>
-                   Request
+                  Request
             </button>
 
         </div>
@@ -61,12 +61,13 @@
           });
           $(document).ready(function () {
             $('.requestbtn').click(function () {
-               alert('ok');
+              // alert('ok');
               let notes = $('.notes').val();
+              var subject = $("input[name='radio']:checked").val();
               let id = $(this).data('id');
               console.log(id);
-              
-              $.post("{{route('requesttutor.store')}}",{notes:notes,id:id},function (response) {
+              console.log(subject);
+              $.post("",{notes:notes,id:id,subject:subject},function (response) {
                 console.log(response.msg);
                 //localStorage.clear();
                 location.href="/userparent";
