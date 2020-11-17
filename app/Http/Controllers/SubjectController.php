@@ -17,8 +17,9 @@ class SubjectController extends Controller
     public function index()
     {
         //$tutor_id = Auth::id();
+        $tu_id =Auth::id();
         $subject = Subject::all();
-        return view('subject.index',compact('subject'));
+        return view('subject.index',compact('subject','tu_id'));
         
     }
 

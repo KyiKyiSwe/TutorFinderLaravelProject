@@ -6,6 +6,9 @@ use App\Tutor;
 use Illuminate\Http\Request;
 use App\Level;
 use App\Grade;
+use App\Userparent;
+use App\Request_tutor;
+
 
 class BackController extends Controller
 {
@@ -94,8 +97,13 @@ class BackController extends Controller
     }
       public function viewappointment()
     {
-
-        return view('backendadmin.viewappointment');
+        $userparent = Userparent::all();
+        $tutor     = Tutor::all();
+        $requesttutor = Request_tutor::all();
+        $level = level::all();
+        $grade = Grade::all();
+        // $subject = subject::all();
+        return view('backendadmin.viewappointment',compact('userparent','tutor','requesttutor','level','grade'));
     }
      public function viewtutor()
     {

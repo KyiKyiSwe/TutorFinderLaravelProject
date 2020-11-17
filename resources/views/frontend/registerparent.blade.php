@@ -71,7 +71,7 @@
                             </div>
                         </div>
                 </form>
-				<p class="my-5">Don't have an Account? <a href="{{route('loginallpage')}}"> Login Now!</a></p>
+				<p class="my-5">Don't have an Account? <a href="{{route('parentregister')}}"> Login Now!</a></p>
 			</div>
 		</div>
 		

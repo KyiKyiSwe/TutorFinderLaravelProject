@@ -17,4 +17,12 @@ class Request_tutor extends Model
   {
       return $this->belongsTo('App\Userparent');
   }
+  public function level()
+  {
+      return $this->hasOne('App\Request_tutor');
+  }
+   public function grades()
+  {
+      return $this->hasMany('App\Grade');
+  }
 }

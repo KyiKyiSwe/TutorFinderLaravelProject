@@ -16,4 +16,8 @@ class Grade extends Model
   {
       return $this->hasMany('App\Tutor');
   }
+  public function requesttutor()
+  {
+      return $this->hasMany('App\Request_tutor');
+  }
 }

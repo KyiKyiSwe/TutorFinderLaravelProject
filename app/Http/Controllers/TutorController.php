@@ -19,8 +19,11 @@ class TutorController extends Controller
      */
     public function index()
     {
+        $users =User::all();
         $tutors=Tutor::all();
-        return view('backendadmin.index',compact('tutors'));
+        $grades = Grade::all();
+        $levels = Level::all();
+        return view('backendadmin.index',compact('tutors','users','grades','levels'));
     }
     
     
