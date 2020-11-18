@@ -8,9 +8,9 @@ class Tutor extends Model
 {
      protected $fillable=['photo','phoneno','schoolname','qualification','address','city','level_id','grade_id','user_id'];
 
-     public function grade()
+     public function grades()
   {
-      return $this->hasMany('App\Grade');
+      return $this->belongsTo('App\Grade');
   }
   public function level()
   {

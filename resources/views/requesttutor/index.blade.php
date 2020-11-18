@@ -40,7 +40,7 @@
                            $i=1;
                            @endphp
                            @foreach($pending_orders as $row)
-                           @if($row->id == $tutorid)
+                           @if($row->tutor_id == $tutorid)
                            <tr>
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>

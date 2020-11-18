@@ -18,7 +18,7 @@ class UserparentController extends Controller
     public function index()
     {
         $userparents = Userparent::all();
-        $tutors = Tutor::all();
+        $tutors = Tutor::take(6)->get();
         return view('parent.index',compact('userparents','tutors'));
     }
 
@@ -120,7 +120,10 @@ class UserparentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Userparent $userparent)
-    {
-        //
+    {   
+        $parents = Userparent::all();
+        $userparent->delete();
+        //return redirect()->route('parent.index');
+        return view('Backendadmin.viewparent');
     }
 }

@@ -92,8 +92,8 @@ class BackController extends Controller
 
     public function viewparent()
     {
-
-        return view('backendadmin.viewparent');
+        $parents = Userparent::all();
+        return view('backendadmin.viewparent',compact('parents'));
     }
       public function viewappointment()
     {

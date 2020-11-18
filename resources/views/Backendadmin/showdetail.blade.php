@@ -6,7 +6,7 @@
     <div class="row mt-5 ml-5">
       <div class="col-md-12">
         <div class="tile">
-          <h2> Detail Information</h2>
+          <h2>Tutor Detail</h2>
 
           <div class="card my-3">
             <div class="row no-gutters">
@@ -15,14 +15,14 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">{{$tutor->id}}: Julia</h5>
+                  <h5 class="card-title">{{$tutor->user->name}}</h5>
                   <p class="card-text">{{$tutor->email}}</p>
                   
                   <p class="card-text">{{$tutor->phoneno}}</p>
                   <p class="card-text">{{$tutor->schoolname}}</p>
                   <p class="card-text">{{$tutor->qualification}}</p>
-                  <p class="card-text">{{-- {{$tutor->level->name}} --}}</p>
-                  <p class="card-text">{{-- {{$tutor->grade->name}} --}}</p>
+                  <p class="card-text">{{-- {{$tutor->level}} --}}</p>
+                  <p class="card-text">{{$tutor->grades}}</p>
                   <p class="card-text">{{$tutor->address}}</p>
                   <p class="card-text">{{$tutor->city}}</p>
 

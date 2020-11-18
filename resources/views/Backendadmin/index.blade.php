@@ -17,27 +17,21 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary text-center">
-                        <th>
+                        <th class="px-3">
                           No
                         </th>
-                        <th>
-                          Image
-                        </th>
-                        <th>
-                          Tutor Id
-                        </th>
-                        <th>
+                        <th class="px-3">
                           Tutor Name
                         </th>
-                        <th>
+                        <th class="px-3">
                           Phone
                         </th>
-                        <th>
+                        <th class="px-5">
                           Action
                         </th>
-                        <th>
+                        {{-- <th class="px5">
                           Action
-                        </th>
+                        </th> --}}
                        
                       </thead>
 
@@ -48,19 +42,21 @@
 
                           @foreach($tutors as $row)
                         <tr class="text-center">
-                          <th>{{$i++}}</th>
-                          <th>{{$row->photo}}</th>
-                          <th>{{$row->id}}</th>                          
-                          <th>Julia</th>
-                          <th>{{$row->phoneno}}</th>
+                          <td>{{$i++}}</td>                         
+                          <td>{{$row->user->name}}</td>
+                          <td>{{$row->phoneno}}</td>
                           
-                          <th><a href="{{-- {{route('Backendadmin.showdetail',$row->id)}} --}}" class="btn btn-info">Detail</a></th>
-                          <th>
-                            <form method="post" action="" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
-            @csrf
-            @method('DELETE')
-            <input type="submit" name="btnsubmit" value="Delete" class="btn btn-primary">
+                          <td>
+                            <a href="{{route('tutor.show',$row->id)}}">
+                              <input type="summit" name="btnsubmit" value="Detail" class="btn btn-primary">
+                            </a>
                           </th>
+                          {{-- <td>
+                            <form method="post" action="{{route('tutor.destroy',$row->id)}}" class="d-inline-block" onsubmit="return confirm('Are you sure want to delete?')" >
+                              @csrf
+                              @method('DELETE')
+                              <input type="submit" name="btnsubmit" value="Delete" class="btn btn-primary">
+                          </td> --}}
                           
                         </tr>
                           @endforeach

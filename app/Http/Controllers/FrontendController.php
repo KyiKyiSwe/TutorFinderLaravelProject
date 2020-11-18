@@ -8,6 +8,7 @@ use App\Tutor;
 use App\User;
 use App\Subject;
 use App\Request_tutor;
+use Auth;
 
 
 class FrontendController extends Controller
@@ -15,8 +16,9 @@ class FrontendController extends Controller
     //frontend
 
     public function frontend()
-    {
-    	return view('frontend.home');
+    {   
+        $tutors = Tutor::take(6)->get();
+    	return view('frontend.home',compact('tutors'));
     }
 
     public function about()
@@ -58,13 +60,17 @@ class FrontendController extends Controller
     // }
     
     public function parentrequest()
-    {   
+    {  
+       $authuser = Auth::user();  // take the user that login now
+       $userparent = $authuser->userparent;
+       //dd($userparent);
+       $parentid = $userparent->id; 
        $requesttutor = Request_tutor::all();
        $tutor =Tutor::all();
        $pending_orders = Request_tutor::where('status',0)->get();
        $confirmed_orders = Request_tutor::where('status',1)->get();
        //dd($confirmed_orders);
-        return view('parent.requestdemo',compact('requesttutor','tutor','pending_orders','confirmed_orders'));
+        return view('parent.requestdemo',compact('requesttutor','tutor','pending_orders','confirmed_orders','parentid'));
     }
 
     public function acceptedtutor()

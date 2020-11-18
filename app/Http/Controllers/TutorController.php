@@ -62,7 +62,7 @@ class TutorController extends Controller
      */
     public function show(Tutor $tutor)
     {
-       
+       return view('Backendadmin.showdetail',compact('tutor'));
     }
 
     /**
@@ -138,7 +138,7 @@ class TutorController extends Controller
     public function destroy(Tutor $tutor)
     {
         $tutor->delete();
-         return redirect()->route('tutor.index');
+        return redirect()->route('tutor.index');
     }
 
     

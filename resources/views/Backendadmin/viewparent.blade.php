@@ -17,48 +17,39 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary text-center">
-                        <th>
-                          No
-                        </th>
-                        <th>
-                          Parent Name
-                        </th>
-                        <th>
-                          E-mail
-                        </th>
-                        <th>
-                          Contact no:
-                        </th>
-                        <th>
-                          Address
-                        </th>
-                        <th>
-                          City
-                        </th>
-                        <th>
-                          Action
-                        </th>
-                       
+                        <th>No</th>
+                        <th>Parent Name</th>
+                        <th>E-mail</th>
+                        <th>Contact no:</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        {{-- <th>Action</th>  --}}
                       </thead>
 
                       <tbody>
                         @php
                           $i=1;
-                          @endphp
+                        @endphp
 
-                       
+                        @foreach($parents as $parent)
                         <tr class="text-center">
                           <th>{{$i++}}</th>
-                          <th>Daw Mya Mya</th>
-                          <th>myamya@gmail.com</th>                          
-                          <th>09-83843477347</th>
-                          <th>Between 32 x 33 street</th>
-                          <th>Mandalay</th>
+                          <th>{{$parent->user->name}}</th>
+                          <th>{{$parent->user->email}}</th>                          
+                          <th>{{$parent->phoneno}}</th>
+                          <th>{{$parent->address}}</th>
+                          <th>{{$parent->city}}</th>
 
-                          <th><a href="" class="btn btn-info">Delete</a></th>
+                          {{-- <th>
+                            <form method="post" action="{{route('userparent.destroy',$parent->id)}}" class="d-inline-block" onsubmit="return confirm('Are you Sure to Delete?')">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" name="btnsubmit" value="Delete" class="btn btn-secondary">
+                          </form>
+                          </th> --}}
                           
                         </tr>
-                    
+                        @endforeach
                         
                       </tbody>
                     </table>

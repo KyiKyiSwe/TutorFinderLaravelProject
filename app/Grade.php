@@ -12,7 +12,7 @@ class Grade extends Model
   {
       return $this->belongsTo('App\Grade');
   }
-  public function tutor()
+  public function tutors()
   {
       return $this->hasMany('App\Tutor');
   }
