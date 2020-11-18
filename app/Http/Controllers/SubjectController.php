@@ -124,6 +124,7 @@ class SubjectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Subject $subject)
+
     {
         return view('subject.edit',compact('subject'));
         
@@ -182,6 +183,7 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
+        where('id', 1)->wherePivot('year', 2011)->detach(1);
         
         $subject->delete();
         $subject->tutors()->detach();
