@@ -15,8 +15,8 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedback = Feedback::all();
-        return view('feedback.index',compact('feedback'));
+        // $feedback = Feedback::all();
+        // return view('feedback.index',compact('feedback'));
     }
 
     /**
@@ -93,12 +93,13 @@ class FeedbackController extends Controller
 
         // data store
         $myfeedback = json_decode($request->feedback);
+        //dd($myfeedback);
         $comment = $request->comment;
         $date = date('Y-m-d');
         
 
         foreach ($myfeedback as $row) {
-            
+               //dd($row);
             
                 $tutor_id = $row->id;
                 
@@ -120,6 +121,7 @@ class FeedbackController extends Controller
         $authuser = Auth::user();
         $parent = $authuser->userparent;
         $userparent_id = $parent->id;
+        //dd($userparent_id);
         $feedback->userparent_id = $userparent_id;
 
         $feedback->save();
@@ -129,6 +131,6 @@ class FeedbackController extends Controller
         // }
 
         return response()
-            ->json(['msg' => 'Successful You Order!']);
+            ->json(['msg' => 'Successful You Request!']);
     }
 }

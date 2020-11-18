@@ -22,7 +22,7 @@
       <div class="sidebar" data-color="purple" data-background-color="white" data-image="{{asset('admin_asset/img/sidebar-1.jpg')}}">
       
          <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Creative Tim
+            Tutor Finder System
             </a>
          </div>
          <div class="sidebar-wrapper">
@@ -48,9 +48,9 @@
                       @csrf
                   </form>
 
-                  <a class="text-center my-2" href="{{route('tutorprofile.create')}}">
+                  {{-- <a class="text-center my-2" href="{{route('tutorprofile.create')}}">
                       {{ __('Profile') }}
-                  </a>
+                  </a> --}}
               </div>
           </li>
           @endauth

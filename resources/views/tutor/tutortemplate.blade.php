@@ -60,7 +60,7 @@
           </li>
           
           <li>
-              <a href="{{route('feedback.index')}}">Feedback</a>
+              <a href="{{route('newfeedback')}}">Feedback</a>
           </li>
           {{-- <li>
               <a href="{{route('tutorprofile.create')}}">Add Profile</a>

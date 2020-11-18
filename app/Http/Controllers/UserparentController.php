@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use App\Tutor;
+use Auth;
 
 class UserparentController extends Controller
 {
@@ -49,7 +50,7 @@ class UserparentController extends Controller
             "phone" => "required",
             "address" => "required",
             "city" => "required",
-            "user" => "required"
+            
         ]);
 
         // If include file, upload
@@ -70,7 +71,7 @@ class UserparentController extends Controller
         $parent->phoneno = $request->phone;
         $parent->address = $request->address;
         $parent->city = $request->city;
-        $parent->user_id = $request->user;
+        $parent->user_id = Auth::id();
         $parent->save();
 
         // redirect

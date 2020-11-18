@@ -62,8 +62,8 @@
 	          console.log(comment);
 	          $.post("/comment",{comment:comment,feedback:feedback},function (response) {
 	            console.log(response.msg);
-	            localStorage.clear();
-	            location.href = "/parentrequest";
+	            //localStorage.clear();
+	            //location.href = "/parentrequest";
 	          })
 	        })   
 	         

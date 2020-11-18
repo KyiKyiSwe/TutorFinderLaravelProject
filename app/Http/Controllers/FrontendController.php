@@ -9,6 +9,7 @@ use App\User;
 use App\Subject;
 use App\Request_tutor;
 use Auth;
+use App\Feedback;
 
 
 class FrontendController extends Controller
@@ -111,5 +112,11 @@ class FrontendController extends Controller
     public function parentfeedback($id)
     {
         return view('parent.feedback');
+    }
+
+    public function newfeedback()
+    {   
+        $feedback = Feedback::all();
+        return view('feedback.index',compact('feedback'));
     }
 }

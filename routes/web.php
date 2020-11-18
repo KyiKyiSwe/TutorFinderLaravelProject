@@ -56,7 +56,7 @@ Route::post('comment','FeedbackController@comment')->name('comment');
 Route::resource('backend','BackController');
 Route::resource('requesttutor','RequestTutorController');
 
-
+Route::get('newfeedback','FrontendController@newfeedback')->name('newfeedback');
 
 
 

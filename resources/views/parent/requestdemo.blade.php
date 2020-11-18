@@ -90,8 +90,8 @@
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
                               <td>
-                                 <a href="{{route('parentfeedback',$row->tutor->user->id)}}">
-                                    <button class="btn btn-success feedbackbtn"  data-id="{{$row->tutor->user->id}} " data-subject="{{$row->subject->id}}">
+                                 <a href="{{route('parentfeedback',$row->tutor_id)}}">
+                                    <button class="btn btn-success feedbackbtn"  data-id="{{$row->tutor_id}} " data-subject="{{$row->subject->id}}">
                                       Feedback 
                                     </button>                                     
                                  </a>

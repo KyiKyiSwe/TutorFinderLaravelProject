@@ -28,11 +28,13 @@ class CreateFeedbackTable extends Migration
                     ->references('id')
                     ->on('subjects')
                     ->onDelete('cascade');
+                    
             $table->unsignedBigInteger('userparent_id');
             $table->foreign('userparent_id')
                     ->references('id')
                     ->on('userparents')
                     ->onDelete('cascade');
+
             $table->date('date');
             $table->timestamps();
         });
