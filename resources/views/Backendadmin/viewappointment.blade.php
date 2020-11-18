@@ -17,34 +17,12 @@
                   <div class="table-responsive">
                     <table class="table">
                       <thead class=" text-primary text-center">
-                        <th>
-                          No
-                        </th>
-                        <th>
-                          Request Id
-                        </th>
-                        <th>
-                          Parent Name
-                        </th>
-                        <th>
-                          Tutor Name
-                        </th>
-                        <th>
-                          Level
-                        </th>
-                        <th>
-                          Grade
-                        </th>
-                        <th>
-                          Subject
-                        </th>
-                        <th>
-                          Start Date
-                        </th>
-                        
-                        <th>
-                          Request Status
-                        </th>
+                        <th> No</th>
+                        <th> Parent Name</th>
+                        <th> Tutor Name</th>
+                        <th> Subject</th>
+                        <th> Start Date</th>
+                        <th> Request Status</th>
                         
                        
                       </thead>
@@ -57,15 +35,15 @@
                       @foreach($requesttutor as $row)                          
                         <tr class="text-center">
                           <th>{{$i++}}</th>
-                          <th>{{$row->id}}</th>
-                          <th>{{$row->userparent->name}}</th>                          
-                          <th>{{$row->tutor->name}}</th>
-                          <th>{{-- {{$row->level->name}} --}}</th>
-                          <th>{{-- {{$row->tutor->level->name}} --}}</th>
-                          <th>{{-- {{$row->subject->name}} --}}subject</th>
+                          <th>{{$row->userparent->user->name}}</th>                 
+                          <th>{{$row->tutor->user->name}}</th>
+                          <th>{{$row->subject}}</th>
                           <th>{{$row->requestdate}}</th>
-
-                          <th>{{$row->status}}</th>  
+                          @if($row->status == 0)
+                          <th>pending</th> 
+                          @elseif($row->status == 1) 
+                           <th>confirm</th>
+                           @endif 
                         </tr>
                         @endforeach
                    </tbody>

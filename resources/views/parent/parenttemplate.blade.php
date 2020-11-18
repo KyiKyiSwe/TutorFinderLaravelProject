@@ -55,7 +55,7 @@
           <li><a href="{{route('parentrequest')}}">Requested&Accepted Tutors</a></li>
           {{-- <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li> --}}
           {{-- <li><a href="#">Feedback</a></li> --}}
-          <li><a href="{{route('userparent.create')}}">Add Profile</a></li>
+          
 
           @auth
           <li class="dropdown">
@@ -64,7 +64,7 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
+                  <a class="text-center dropdown-item" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
                       {{ __('Logout') }}
@@ -73,6 +73,10 @@
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                   </form>
+
+                  <a class="text-center my-2" href="{{route('userparent.create')}}">
+                      {{ __('Profile') }}
+                  </a>
               </div>
           </li>
           

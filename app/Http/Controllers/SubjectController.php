@@ -139,6 +139,7 @@ class SubjectController extends Controller
      */
     public function update(Request $request, Subject $subject)
     {
+              
         if ($request->file()) {
 
             //78748785858_bella.jpg
@@ -169,7 +170,9 @@ class SubjectController extends Controller
             //dd($authuser,$tutor);
             $tutor_id = $tutor->id;
              //dd($tutor_id);
-            $subject->tutors()->attach($tutor_id,['fee'=>$request->fee,'course'=>$path,'hours'=>$request->hours]);
+        
+            $subject->tutors()->updateExistingPivot($tutor_id, ['fee'=>$request->fee,'course'=>$path,'hours'=>$request->hours]);
+          
 
             //dd($subject);
             return redirect()->route('subject.index');
@@ -183,7 +186,7 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        where('id', 1)->wherePivot('year', 2011)->detach(1);
+        //where('id', 1)->wherePivot('year', 2011)->detach(1);
         
         $subject->delete();
         $subject->tutors()->detach();

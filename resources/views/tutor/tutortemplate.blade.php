@@ -62,10 +62,10 @@
           <li>
               <a href="{{route('feedback.index')}}">Feedback</a>
           </li>
-          <li>
+          {{-- <li>
               <a href="{{route('tutorprofile.create')}}">Add Profile</a>
-          </li>
-
+          </li> --}}
+          
           @auth
           <li class=" dropdown">
               <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -73,7 +73,7 @@
               </a>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a href="{{ route('logout') }}"
+                  <a class="text-center" href="{{ route('logout') }}"
                      onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();">
                       {{ __('Logout') }}
@@ -82,13 +82,13 @@
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                   </form>
+
+                  <a class="text-center my-2" href="{{route('tutorprofile.create')}}">
+                      {{ __('Profile') }}
+                  </a>
               </div>
           </li>
-          
           @endauth
-
-          </li>
-
 
         </ul>
       </nav><!-- .nav-menu -->
