@@ -42,7 +42,7 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->tutor->user->name}}</td>
                               <td>
-                                 English
+                                  {{$row->subject}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
@@ -85,7 +85,7 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->tutor->user->name}}</td>
                               <td>
-                                 English
+                                   {{$row->subject}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
