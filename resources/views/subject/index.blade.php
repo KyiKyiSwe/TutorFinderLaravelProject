@@ -42,7 +42,13 @@
                      
                     <td>
                       <a href="{{route('subject.edit',$value->id)}}" class="btn btn-success">Edit</a>
-                      <button class="btn btn-success">Delete</button></td>
+                      <form method="post" action="{{route('subject.destroy',$value->id)}}" class="d-inline-block" onsubmit="return confirm('Are you sure to delete?')">
+                @csrf
+                @method('DELETE')
+
+                <input type="submit" name="btndelete" value="delete" class="btn btn-danger">
+                
+              </form>
                   </tr> 
                   @endif  
                     @endforeach

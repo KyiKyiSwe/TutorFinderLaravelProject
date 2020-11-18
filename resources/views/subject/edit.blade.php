@@ -15,7 +15,7 @@
 
                   <div class="form-group">
                     <label>Subject:</label>
-                    <input type="text" name="name" class="form-control @error('subject') is-invalid @enderror" placeholder="Enter subject" value="{{old('name')}}">
+                    <input type="text" name="name" class="form-control @error('subject') is-invalid @enderror" placeholder="Enter subject" value="{{$subject->name}}">
                     @error('subject')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -25,7 +25,7 @@
 
                    <div class="form-group">
                     <label>Fee:</label>
-                    <input type="number" name="fee" class="form-control @error('fee') is-invalid @enderror" placeholder="Enter fee" value="{{old('fee')}}">
+                    <input type="number" name="fee" class="form-control @error('fee') is-invalid @enderror" placeholder="Enter fee" value="{{$subject->fee}}">
                     @error('fee')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
 
                   <div class="form-group">
                     <label>Hours:</label>
-                    <input type="text" name="hours" class="form-control @error('hours') is-invalid @enderror" placeholder="Enter hours" value="{{old('hours')}}">
+                    <input type="text" name="hours" class="form-control @error('hours') is-invalid @enderror" placeholder="Enter hours" value="{{$subject->hours}}">
                     @error('hours')
                       <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

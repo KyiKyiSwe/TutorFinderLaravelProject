@@ -49,7 +49,7 @@ Route::resource('usertutor','UsertutorController');
 Route::resource('subject','SubjectController');
 Route::resource('tutorprofile','TutorprofileController');
 
-Route::resource('feedback','feedbackreplyController');
+Route::resource('feedback','FeedbackController');
  
 
 Route::resource('backend','BackController');
