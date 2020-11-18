@@ -149,7 +149,7 @@ class SubjectController extends Controller
             $path=$request->oldcourse;
         }
             // save into original table
-            $subject =new Subject;
+            
             $subject->name = $request->name;
             $subject->save();
 

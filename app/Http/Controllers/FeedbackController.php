@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Feedback;
 use Illuminate\Http\Request;
-use App\Subject;
-use App\Tutor;
 
-
-class FeedbackreplyController extends Controller
+class FeedbackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +14,7 @@ class FeedbackreplyController extends Controller
      */
     public function index()
     {
-        $feedback = Feedback::all();
-        $subjects = Subject::all();
-        $tutors = Tutor::all();
-        return view('feedback.index',compact('feedback','subjects','tutors'));
+        //
     }
 
     /**

@@ -23,15 +23,17 @@
                   //var_dump($feedback);
                   @endphp
                   {{-- to show auth user feedback --}}
-                  @foreach($feedback as $row)
+                  {{-- @foreach($feedback as $row) --}}
+
                   {{-- @foreach($feedback->sub_tutors as $row) --}}
                   <tr>
                      <td>{{$i++}}</td>
                      <td>{{$row->userparent->user->name}}</td>
 
-           
-                     <td>{{-- {{$row->sub_tutor_id->pivot}} --}}
-                        {{$row->sub_tutor_id}}</td>
+                    
+                     <td>{{$row}}
+                        </td>
+                     
             
 
                      <td>{{$row->comment}}</td>

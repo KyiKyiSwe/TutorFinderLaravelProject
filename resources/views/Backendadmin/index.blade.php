@@ -41,6 +41,7 @@
                           @endphp
 
                           @foreach($tutors as $row)
+
                         <tr class="text-center">
                           <td>{{$i++}}</td>                         
                           <td>{{$row->user->name}}</td>
