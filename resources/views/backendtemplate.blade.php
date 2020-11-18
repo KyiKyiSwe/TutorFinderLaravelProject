@@ -48,9 +48,6 @@
                       @csrf
                   </form>
 
-                  {{-- <a class="text-center my-2" href="{{route('tutorprofile.create')}}">
-                      {{ __('Profile') }}
-                  </a> --}}
               </div>
           </li>
           @endauth

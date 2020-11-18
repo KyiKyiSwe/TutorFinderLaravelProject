@@ -6,41 +6,38 @@
   <section id="hero" class="d-flex justify-content-center align-items-center">
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
-      {{-- <h2>We are team of talanted designers making websites with Bootstrap</h2> --}}
+      
     </div>
   </section><!-- End Hero -->
 
   <main id="main">
-
-    <!-- ======= Trainers Section ======= -->
-    <section id="trainers" class="trainers">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Tutors</h2>
-          <p>Our Tutors</p>
-        </div>
-
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-            <div class="member">
-              <img src="{{asset('frontend_asset/assets/img/trainers/trainer-2.jpg')}}" class="img-fluid" alt="">
-              <div class="member-content">
-                <h4>Sarah Jhinson</h4>
-                <span>Marketing</span>
-                <p>
-                  Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-                </p>
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-
+    <div class="container">
+      <h4 class="text-center text-success my-3">Welcome our beloved tutors!</h3>
+      <h5 class="text-center text-success my-3">A teacher is one who helps others and influences lives forever.</h4>
+      <div class="row py-5">
+      <div class="col-sm-12 col-md-4 px-2">
+          <img src="{{asset('newphoto/p1.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      <div class="col-sm-12 col-md-4 px-2">
+          <img src="{{asset('newphoto/p2.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      <div class="col-sm-12 col-md-4 px-2">
+          <img src="{{asset('newphoto/p3.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      <div class="col-sm-12 col-md-4 px-2 my-3">
+          <img src="{{asset('newphoto/p4.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      <div class="col-sm-12 col-md-4 px-2 my-3">
+          <img src="{{asset('newphoto/p5.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      <div class="col-sm-12 col-md-4 px-2 my-3">
+          <img src="{{asset('newphoto/p6.png')}}" class="img-responsive " style="width: 350px;">
+      </div>
+      
     </div>
+    </div>
+
+    
     </section><!-- End Trainers Section -->
 
     <!-- ======= Counts Section ======= -->
