@@ -16,8 +16,9 @@ class Subject extends Model
               ->withPivot('hours')				
       				->withTimestamps();
   }
-  public function feedback()
+ 
+   public function Feedback()
   {
-      return $this->belongsTo('App\Feedback');
+      return $this->hasMany('App\Feedback');
   }
 }

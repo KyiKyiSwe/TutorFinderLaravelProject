@@ -47,6 +47,7 @@
                           @endphp
 
                           @foreach($tutors as $row)
+
                         <tr class="text-center">
                           <th>{{$i++}}</th>
                           <th>{{$row->photo}}</th>

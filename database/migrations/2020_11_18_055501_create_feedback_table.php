@@ -17,12 +17,17 @@ class CreateFeedbackTable extends Migration
             $table->id();
             $table->string('comment');
 
-            $table->unsignedBigInteger('sub_tutor_id');
-            $table->foreign('sub_tutor_id')
+            $table->unsignedBigInteger('tutor_id');
+            $table->foreign('tutor_id')
                     ->references('id')
-                    ->on('sub_tutors')
+                    ->on('tutors')
                     ->onDelete('cascade');
 
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')
+                    ->references('id')
+                    ->on('subjects')
+                    ->onDelete('cascade');
             $table->unsignedBigInteger('userparent_id');
             $table->foreign('userparent_id')
                     ->references('id')

@@ -50,6 +50,8 @@ Route::resource('subject','SubjectController');
 Route::resource('tutorprofile','TutorprofileController');
 
 Route::resource('feedback','feedbackreplyController');
+ 
+
 Route::resource('backend','BackController');
 Route::resource('requesttutor','RequestTutorController');
 

@@ -19,6 +19,7 @@ class TutorController extends Controller
      */
     public function index()
     {
+
         $users =User::all();
         $tutors=Tutor::all();
         $grades = Grade::all();

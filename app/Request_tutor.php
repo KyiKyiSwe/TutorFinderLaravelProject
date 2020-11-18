@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Request_tutor extends Model
 {
-    protected $fillable=['requestdate','note','status','userparent_id','tutor_id'];
+    protected $fillable=['requestdate','note','status','userparent_id','tutor_id','subject'];
 
     public function tutor()
   {
