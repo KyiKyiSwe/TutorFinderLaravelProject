@@ -8,18 +8,18 @@ class Tutor extends Model
 {
      protected $fillable=['photo','phoneno','schoolname','qualification','address','city','level_id','grade_id','user_id'];
 
-     public function grades()
+     public function grade()
   {
       return $this->belongsTo('App\Grade');
   }
   public function level()
   {
-      return $this->hasOne('App\Grade');
+      return $this->belongsTo('App\Level');
   }
 
    public function request_tutor()
   {
-      return $this->hasMany('App\request_tutor');
+      return $this->hasMany('App\Request_tutor');
   }
      public function subjects()
   {

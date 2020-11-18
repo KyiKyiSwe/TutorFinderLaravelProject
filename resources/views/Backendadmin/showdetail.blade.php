@@ -21,8 +21,8 @@
                   <p class="card-text">{{$tutor->phoneno}}</p>
                   <p class="card-text">{{$tutor->schoolname}}</p>
                   <p class="card-text">{{$tutor->qualification}}</p>
-                  <p class="card-text">{{-- {{$tutor->level}} --}}</p>
-                  <p class="card-text">{{$tutor->grades}}</p>
+                  <p class="card-text">{{$tutor->level->name}}</p>
+                  <p class="card-text">{{$tutor->grade->name}}</p>
                   <p class="card-text">{{$tutor->address}}</p>
                   <p class="card-text">{{$tutor->city}}</p>
 

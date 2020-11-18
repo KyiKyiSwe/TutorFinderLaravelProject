@@ -61,13 +61,13 @@
           });
           $(document).ready(function () {
             $('.requestbtn').click(function () {
-              // alert('ok');
+               //alert('ok');
               let notes = $('.notes').val();
               var subject = $("input[name='radio']:checked").val();
               let id = $(this).data('id');
               console.log(id);
               console.log(subject);
-              $.post("",{notes:notes,id:id,subject:subject},function (response) {
+              $.post("{{route('requesttutor.store')}}",{notes:notes,id:id,subject:subject},function (response) {
                 console.log(response.msg);
                 //localStorage.clear();
                 location.href="/userparent";

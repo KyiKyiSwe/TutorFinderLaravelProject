@@ -68,12 +68,10 @@ class RequestTutorController extends Controller
         
         $requesttutor->requestdate = $requestdate;
         $requesttutor->note = $notes;
-        //$requesttutor->userparent_id = Auth::id(); // current logined user_id
+        $requesttutor->subject = $subject;
 
         $authuser = Auth::user();
-          // take the user that login now
         $parent = $authuser->userparent;
-        // dd($parent);
         $userparent_id = $parent->id;
         $requesttutor->userparent_id = $userparent_id;
 

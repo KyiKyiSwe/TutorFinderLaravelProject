@@ -8,11 +8,11 @@ class Level extends Model
 {
     protected $fillable=['name'];
 
-     public function grade()
+     public function grades()
   {
       return $this->hasMany('App\Grade');
   }
-   public function tutor()
+   public function tutors()
   {
       return $this->hasMany('App\Tutor');
   }
