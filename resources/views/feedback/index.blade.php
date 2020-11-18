@@ -25,19 +25,13 @@
                   {{-- to show auth user feedback --}}
                   {{-- @foreach($feedback as $row) --}}
 
-                  {{-- @foreach($feedback->sub_tutors as $row) --}}
+                  @foreach($feedback as $row)
                   <tr>
                      <td>{{$i++}}</td>
                      <td>{{$row->userparent->user->name}}</td>
-
-                    
-                     <td>{{$row}}
-                        </td>
-                     
-            
-
+                     <td>{{$row->subject->name}}</td>
                      <td>{{$row->comment}}</td>
-                     <td>date</td>
+                     <td>{{$row->date}}</td>
                   </tr>
                   @endforeach
                </tbody>

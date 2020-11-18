@@ -171,10 +171,6 @@ class SubjectController extends Controller
             $subject->tutors()->attach($tutor_id,['fee'=>$request->fee,'course'=>$path,'hours'=>$request->hours]);
 
             //dd($subject);
-
-         
-        
-            
             return redirect()->route('subject.index');
     }
 
@@ -186,6 +182,9 @@ class SubjectController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        //
+        
+        $subject->delete();
+        $subject->tutors()->detach();
+         return redirect()->route('subject.index');
     }
 }

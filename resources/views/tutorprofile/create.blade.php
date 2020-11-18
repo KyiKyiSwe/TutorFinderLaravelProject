@@ -24,13 +24,8 @@
 
                 <div class="form-group">
                   <label>Name:</label>
-                  <select name="name" class="form-control">
-                    <optgroup label="Choose Subject">
-                      @foreach($users as $user)
-                      <option value="{{$user->id}}">{{$user->name}}</option>
-                      @endforeach
-                    </optgroup>
-                  </select>
+                  <input type="text" name="name" value="{{Auth::user()->name}}">
+                  
                 </div>
 
                 <div class="form-group">
