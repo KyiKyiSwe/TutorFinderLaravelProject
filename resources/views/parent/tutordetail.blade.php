@@ -22,7 +22,7 @@
             <div class="card-body">
             	<label class="radio">Subject:</label>
             	@foreach($tutor->subjects as $subjects)
-            	<input type="radio" name="radio" value={{$subjects->name}}>
+            	<input type="radio" name="radio" value={{$subjects->id}}>
                 <label class="radio">
                 	{{$subjects->name}}
                 	 {{-- @if($subjects->pivot->subject_id == $subject->id)

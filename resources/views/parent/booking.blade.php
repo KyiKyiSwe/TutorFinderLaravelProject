@@ -45,7 +45,7 @@
 		                	@endif
 		                </h4>
 		                @endforeach --}}
-		               <a href="{{route('tutordetail',$tutor->id)}}" class="btn btn-success">Detail
+		               <a href="{{route('tutordetail',$tutor->id)}}" class="btn btn-success mb-3">Detail
 		               </a>
 		                  
 		            </div>

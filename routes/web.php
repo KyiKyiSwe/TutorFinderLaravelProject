@@ -50,6 +50,7 @@ Route::resource('subject','SubjectController');
 Route::resource('tutorprofile','TutorprofileController');
 
 Route::resource('feedback','FeedbackController');
+Route::post('comment','FeedbackController@comment')->name('comment');
  
 
 Route::resource('backend','BackController');
