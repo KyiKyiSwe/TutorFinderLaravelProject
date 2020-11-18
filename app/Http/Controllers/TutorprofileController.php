@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Level;
 use App\Grade;
 use App\User;
+use Auth;
 
 class TutorprofileController extends Controller
 {
@@ -44,6 +45,7 @@ class TutorprofileController extends Controller
     public function store(Request $request)
     {
         //dd($request);
+        //die();
         $request->validate([
         
             "photo"=>"required|mimes:jpeg,bmp,png",
@@ -76,7 +78,7 @@ class TutorprofileController extends Controller
             $tutor->city = $request->city;
             $tutor->level_id =$request->level;
             $tutor->grade_id = $request->grade;
-            $tutor->user_id = $request->name;
+            $tutor->user_id = Auth::id();
 
             $tutor->save();
 
