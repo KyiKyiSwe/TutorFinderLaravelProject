@@ -68,7 +68,7 @@ class RequestTutorController extends Controller
         
         $requesttutor->requestdate = $requestdate;
         $requesttutor->note = $notes;
-        $requesttutor->subject = $subject;
+        $requesttutor->subject_id = $subject;
 
         $authuser = Auth::user();
         $parent = $authuser->userparent;

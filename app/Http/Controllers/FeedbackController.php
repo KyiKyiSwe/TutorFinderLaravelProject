@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Feedback;
 use Illuminate\Http\Request;
+use Auth;
 
 class FeedbackController extends Controller
 {
@@ -36,7 +37,7 @@ class FeedbackController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -82,5 +83,52 @@ class FeedbackController extends Controller
     public function destroy(Feedback $feedback)
     {
         //
+    }
+
+    public function comment(Request $request)
+    {
+        // dd($request);
+
+        // validation
+
+        // data store
+        $myfeedback = json_decode($request->feedback);
+        $comment = $request->comment;
+        $date = date('Y-m-d');
+        
+
+        foreach ($myfeedback as $row) {
+            
+            
+                $tutor_id = $row->id;
+                
+            
+
+                $subject_id = $row->subject; 
+            
+           
+        }
+        
+
+        $feedback = new Feedback;
+        $feedback->comment = $comment;
+        $feedback->date = $date;
+        $feedback->tutor_id = $tutor_id;
+        $feedback->subject_id = $subject_id;
+
+
+        $authuser = Auth::user();
+        $parent = $authuser->userparent;
+        $userparent_id = $parent->id;
+        $feedback->userparent_id = $userparent_id;
+
+        $feedback->save();
+        
+        // foreach ($myorder as $row) { 
+        //     $order->items()->attach($row->id,['quantity'=>$row->qty]);
+        // }
+
+        return response()
+            ->json(['msg' => 'Successful You Order!']);
     }
 }

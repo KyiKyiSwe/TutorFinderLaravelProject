@@ -31,6 +31,12 @@ class CreateRequestTutorsTable extends Migration
                     ->on('tutors')
                     ->onDelete('cascade');
 
+            $table->unsignedBigInteger('subject_id');
+            $table->foreign('subject_id')
+                    ->references('id')
+                    ->on('subjects')
+                    ->onDelete('cascade');
+
             $table->timestamps();
         });
     }

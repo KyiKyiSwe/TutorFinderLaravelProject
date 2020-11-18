@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Request_tutor extends Model
 {
-    protected $fillable=['requestdate','note','status','userparent_id','tutor_id','subject'];
+    protected $fillable=['requestdate','note','status','userparent_id','tutor_id','subject_id'];
 
     public function tutor()
   {
@@ -25,4 +25,9 @@ class Request_tutor extends Model
   {
       return $this->hasMany('App\Grade');
   }
+   public function subject()
+  {
+      return $this->belongsTo('App\Subject');
+  }
+
 }

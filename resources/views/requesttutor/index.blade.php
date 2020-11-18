@@ -45,7 +45,7 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>
                               <td>
-                                 {{$row->subject}}
+                                 {{$row->subject->name}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
@@ -87,7 +87,7 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>
                               <td>
-                                 {{$row->subject}}
+                                 {{$row->subject->name}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
@@ -103,6 +103,11 @@
             </div>
          </div>
       </div>
+   </div>
+</div>
+</div>
+</div>
+
 
    </div>
 </div>

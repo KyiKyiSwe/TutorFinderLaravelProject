@@ -42,7 +42,7 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->tutor->user->name}}</td>
                               <td>
-                                  {{$row->subject}}
+                                  {{$row->subject->name}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
@@ -85,13 +85,13 @@
                               <td>{{$i++}}</td>
                               <td>{{$row->tutor->user->name}}</td>
                               <td>
-                                   {{$row->subject}}
+                                   {{$row->subject->name}}
                               </td>
                               <td>{{$row->requestdate}}</td>
                               <td>{{$row->note}}</td>
                               <td>
                                  <a href="{{route('parentfeedback',$row->tutor->user->id)}}">
-                                    <button class="btn btn-success">
+                                    <button class="btn btn-success feedbackbtn"  data-id="{{$row->tutor->user->id}} " data-subject="{{$row->subject->id}}">
                                       Feedback 
                                     </button>                                     
                                  </a>
@@ -109,4 +109,10 @@
   </div>
 </div>
 </div>
+@endsection
+
+@section('script')
+   
+   <script type="text/javascript" src="{{asset('feedback/custom.js')}}"></script>
+
 @endsection
