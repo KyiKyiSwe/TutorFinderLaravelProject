@@ -1,6 +1,6 @@
 @extends('parent.parenttemplate')
 
-<link href="{{asset('frontend_asset/register/css/registercss.css')}}" rel="stylesheet">
+<link href="{{asset('frontend_asset/register/css/feedback.css')}}" rel="stylesheet">
 
 @section('content')
     <div class="container my-5 py-5">
@@ -8,7 +8,7 @@
     <div class="row my-5">
 
       <div class="col-md-6">
-        <img src="{{asset($tutor->photo)}}" class="img-fluid">
+        <img src="{{asset($tutor->photo)}}" class="img-fluid" alt="">
       </div>
 
       <div class="col-md-6">
@@ -18,6 +18,14 @@
                 {{-- <p>ID: {{$tutor->id}}</p> --}}
                 <p>Address: {{$tutor->address}}</p>
                 <p>City: {{$tutor->city}}</p>
+                <p>Parents' Feedbacks:</p>
+                @foreach($feedback as $row)
+                  @if($tutor->id == $row->tutor_id)
+                    <ul class="px-4">
+                      <li>   {{$row->comment}}</li>  
+                    </ul>
+                  @endif
+                @endforeach
             </div>
             <div class="card-body">
             	<label class="radio">Subject:</label>
@@ -70,7 +78,7 @@
               $.post("{{route('requesttutor.store')}}",{notes:notes,id:id,subject:subject},function (response) {
                 console.log(response.msg);
                 //localStorage.clear();
-                //location.href="/userparent";
+                location.href="/userparent";
               })
             })
           })

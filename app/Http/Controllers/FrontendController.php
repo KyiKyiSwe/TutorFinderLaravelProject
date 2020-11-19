@@ -106,7 +106,8 @@ class FrontendController extends Controller
     {   
         $tutor = Tutor::find($id);
         $subject = Subject::find($id);
-        return view('parent.tutordetail',compact('tutor','subject'));
+        $feedback = Feedback::all();
+        return view('parent.tutordetail',compact('tutor','subject','feedback'));
     }
 
     public function parentfeedback($id)

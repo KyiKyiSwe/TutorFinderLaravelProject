@@ -17,7 +17,7 @@
                <div class="address">
                   <i class="icofont-google-map"></i>
                   <h4>Location:</h4>
-                  <p>Hlaing Township, Yangon, Myanmar</p>
+                  <p>ChanAyeTharZan Township, Mandalay, Myanmar</p>
                </div>
                <div class="email">
                   <i class="icofont-envelope"></i>
