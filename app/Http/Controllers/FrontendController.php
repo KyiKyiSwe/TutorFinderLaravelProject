@@ -116,7 +116,13 @@ class FrontendController extends Controller
 
     public function newfeedback()
     {   
+        $authuser = Auth::user();  // take the user that login now
+
+        $tutor = $authuser->tutor;
+            
+        $tutorid = $tutor->id;
+
         $feedback = Feedback::all();
-        return view('feedback.index',compact('feedback'));
+        return view('feedback.index',compact('feedback','tutorid'));
     }
 }

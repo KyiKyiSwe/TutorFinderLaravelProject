@@ -26,6 +26,7 @@
                   {{-- @foreach($feedback as $row) --}}
 
                   @foreach($feedback as $row)
+                  @if($row->tutor_id == $tutorid)
                   <tr>
                      <td>{{$i++}}</td>
                      <td>{{$row->userparent->user->name}}</td>
@@ -33,6 +34,7 @@
                      <td>{{$row->comment}}</td>
                      <td>{{$row->date}}</td>
                   </tr>
+                  @endif
                   @endforeach
                </tbody>
             </table>
