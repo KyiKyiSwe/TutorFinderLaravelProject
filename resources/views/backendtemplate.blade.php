@@ -55,19 +55,19 @@
                   </a>
                </li>
                <li class="nav-item {{ (Route::currentRouteName()=='viewtutorpage')  ? 'active' : '' }}">
-                  <a class="nav-link" href="{{route('viewtutorpage')}}">
+                  <a class="nav-link" href="{{route('viewtutorpage')}}" style="background-color: #6CBB3C;">
                      <i class="material-icons">content_paste</i>
                      <p>Manage Tutor</p>
                   </a>
                </li>
                <li class="nav-item {{ (Route::currentRouteName()=='viewparentpage')  ? 'active' : '' }}">
-                  <a class="nav-link " href="{{route('viewparentpage')}}">
+                  <a class="nav-link " href="{{route('viewparentpage')}}" style="background-color: #6CBB3C;">
                      <i class="material-icons">bubble_chart</i>
                      <p>View Parents</p>
                   </a>
                </li>
                <li class="nav-item {{ (Route::currentRouteName()=='viewappointmentpage')  ? 'active' : '' }}">
-                  <a class="nav-link" href="{{route('viewappointmentpage')}}">
+                  <a class="nav-link" href="{{route('viewappointmentpage')}}" style="background-color: #6CBB3C;">
                      <i class="material-icons">notifications</i>
                      <p>View Appointments</p>
                   </a>

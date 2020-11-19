@@ -5426,7 +5426,7 @@ tbody.collapse.show {
 .list-group-item.active {
   z-index: 2;
   color: #ffffff;
-  background-color: #2196f3;
+  background-color: #6CBB3C;
   border-color: #2196f3;
 }
 
@@ -13793,7 +13793,7 @@ fieldset[disabled] .form-group .form-control {
 .navbar .navbar-nav .nav-item.active .nav-link:hover,
 .navbar .navbar-nav .nav-item.active .nav-link:focus {
   color: inherit;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #6CBB3C;
 }
 
 .navbar .btn,
@@ -14505,7 +14505,7 @@ h2.title {
 }
 
 .nav-tabs .nav-item .nav-link.active {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #6CBB3C;
   transition: 0.3s background-color 0.2s;
 }
 
