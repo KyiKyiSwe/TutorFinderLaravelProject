@@ -56,11 +56,13 @@ class RequestTutorController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
+        
 
         //$myrequest = json_decode($request->request);
         $notes = $request->notes;
+
         $subject = $request->subject;
+
         $requestdate = date('Y-m-d');
         $tutor_id = $request->id;
 
@@ -73,12 +75,12 @@ class RequestTutorController extends Controller
         $authuser = Auth::user();
         $parent = $authuser->userparent;
         $userparent_id = $parent->id;
+
         $requesttutor->userparent_id = $userparent_id;
 
         $requesttutor->tutor_id = $tutor_id;
-        //dd($requesttutor);
-        $requesttutor->save();
 
+        $requesttutor->save();
         return response()
             ->json(['msg' => 'Successful You Request!']);
     }
