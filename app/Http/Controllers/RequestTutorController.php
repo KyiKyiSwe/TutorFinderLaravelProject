@@ -79,9 +79,8 @@ class RequestTutorController extends Controller
         $requesttutor->userparent_id = $userparent_id;
 
         $requesttutor->tutor_id = $tutor_id;
-      
+
         $requesttutor->save();
-       dd($requesttutor);
         return response()
             ->json(['msg' => 'Successful You Request!']);
     }

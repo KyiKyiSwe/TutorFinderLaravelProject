@@ -83,6 +83,7 @@
                            $i=1;
                            @endphp
                            @foreach($confirmed_orders as $row)
+                           @if($row->tutor_id == $tutorid)
                            <tr>
                               <td>{{$i++}}</td>
                               <td>{{$row->userparent->user->name}}</td>
@@ -93,7 +94,7 @@
                               <td>{{$row->note}}</td>
                            </tr>
                            
-                          
+                           @endif
                            @endforeach 
                         </tbody>
                      </table>
