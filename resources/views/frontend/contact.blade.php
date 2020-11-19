@@ -4,7 +4,7 @@
 <div class="breadcrumbs" data-aos="fade-in">
    <div class="container">
       <h2>Contact Us</h2>
-      <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+      <p>We have tutors in many Subjects in Mandalay. Tutoring is a great way for students to get their questions answered and improve their grades. Tutors work at your pace and tailor their teaching to meet your learning needs. </p>
    </div>
 </div>
 <!-- End Breadcrumbs -->

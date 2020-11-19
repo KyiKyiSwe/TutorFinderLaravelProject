@@ -50,15 +50,21 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{route('userparent.index')}}">Home</a></li>
-          <li><a href="{{route('bookingpage')}}">Booking</a></li>
-          <li><a href="{{route('parentrequest')}}">Requested&Accepted Tutors</a></li>
+          <li class="{{ (Route::currentRouteName()=='userparent.index')  ? 'active' : '' }}">  
+          <a href="{{route('userparent.index')}}">Home</a>
+        </li>
+          {{-- <li class=""> --}}
+            <li class="{{ (Route::currentRouteName()=='bookingpage')  ? 'active' : '' }}"> 
+            <a href="{{route('bookingpage')}}">Booking</a>
+          </li>
+          <li class=" {{ (Route::currentRouteName()=='parentrequest')  ? 'active' : '' }}">
+            <a href="{{route('parentrequest')}}">Requested&Accepted Tutors</a></li>
           {{-- <li><a href="{{route('acceptedtutor')}}">AcceptedTutors</a></li> --}}
           {{-- <li><a href="#">Feedback</a></li> --}}
           
 
           @auth
-          <li class="dropdown">
+          <li class="dropdown  {{ (Route::currentRouteName()=='userparent.create')  ? 'active' : '' }}">
               <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }}
               </a>
@@ -74,7 +80,7 @@
                       @csrf
                   </form>
 
-                  <a class="text-center my-2" href="{{route('userparent.create')}}">
+                  <a class="text-center my-2" href="{{route('userparent.create')}}" >
                       {{ __('Profile') }}
                   </a>
               </div>

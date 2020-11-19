@@ -37,10 +37,10 @@
             <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             <nav class="nav-menu d-none d-lg-block">
                <ul>
-                  <li class="nav-item">
+                  <li class="nav-item {{ (Route::currentRouteName()=='frontendpage')  ? 'active' : '' }}">
                      <a class="nav-link" href="{{route('frontendpage')}}">Home</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {{ (Route::currentRouteName()=='aboutpage')  ? 'active' : '' }}">
                      <a class="nav-link" href="{{route('aboutpage')}}">About</a>
                   </li>
                   @auth
@@ -60,15 +60,15 @@
                      </div>
                   </li>
                   @else
-                  <li class="nav-item">
+                  <li class="nav-item {{ (Route::currentRouteName()=='loginuserpage')  ? 'active' : '' }}">
                      <a class="nav-link" href="{{route('loginuserpage')}}">Login</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {{ (Route::currentRouteName()=='registerpage')  ? 'active' : '' }}">
                      <a class="nav-link" href="{{route('registerpage')}}">Register</a>
                   </li>
                   @endauth
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item {{ (Route::currentRouteName()=='contactpage')  ? 'active' : '' }}">
                      <a class="nav-link" href="{{route('contactpage')}}">Contact</a>
                   </li>
                </ul>

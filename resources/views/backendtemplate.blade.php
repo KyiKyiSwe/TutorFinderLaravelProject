@@ -54,20 +54,20 @@
                      
                   </a>
                </li>
-               <li class="nav-item ">
-                  <a class="nav-link {{Request::is('Backendadmin.viewtutorpage')?'active':''}}" href="{{route('viewtutorpage')}}">
+               <li class="nav-item {{ (Route::currentRouteName()=='viewtutorpage')  ? 'active' : '' }}">
+                  <a class="nav-link" href="{{route('viewtutorpage')}}">
                      <i class="material-icons">content_paste</i>
                      <p>Manage Tutor</p>
                   </a>
                </li>
-               <li class="nav-item ">
-                  <a class="nav-link {{Request::is('Backendadmin.viewparent')?'active':''}}" href="{{route('viewparentpage')}}">
+               <li class="nav-item {{ (Route::currentRouteName()=='viewparentpage')  ? 'active' : '' }}">
+                  <a class="nav-link " href="{{route('viewparentpage')}}">
                      <i class="material-icons">bubble_chart</i>
                      <p>View Parents</p>
                   </a>
                </li>
-               <li class="nav-item ">
-                  <a class="nav-link {{Request::is('Backendadmin.viewappointment')?'active':''}}" href="{{route('viewappointmentpage')}}">
+               <li class="nav-item {{ (Route::currentRouteName()=='viewappointmentpage')  ? 'active' : '' }}">
+                  <a class="nav-link" href="{{route('viewappointmentpage')}}">
                      <i class="material-icons">notifications</i>
                      <p>View Appointments</p>
                   </a>

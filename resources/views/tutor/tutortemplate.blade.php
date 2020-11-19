@@ -49,17 +49,17 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active">
+          <li class="{{ (Route::currentRouteName()=='tutorprofile.index')  ? 'active' : '' }}">
               <a href="{{route('tutorprofile.index')}}">Home</a>
           </li>
-          <li>
+          <li class="{{ (Route::currentRouteName()=='subject.index')  ? 'active' : '' }}">
               <a href="{{route('subject.index')}}">Subject</a>
           </li>
-          <li>
+          <li class="{{ (Route::currentRouteName()=='requesttutor.index')  ? 'active' : '' }}">
               <a href="{{route('requesttutor.index')}}">Request & Appointed</a>
           </li>
           
-          <li>
+          <li class="{{ (Route::currentRouteName()=='newfeedback')  ? 'active' : '' }}">
               <a href="{{route('newfeedback')}}">Feedback</a>
           </li>
           {{-- <li>
@@ -67,7 +67,7 @@
           </li> --}}
           
           @auth
-          <li class=" dropdown">
+          <li class=" dropdown {{ (Route::currentRouteName()=='tutorprofile.create')  ? 'active' : '' }}">
               <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                   {{ Auth::user()->name }}
               </a>
