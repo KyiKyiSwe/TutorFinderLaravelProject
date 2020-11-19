@@ -42,7 +42,6 @@ class UserparentController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
 
         // Validation
         $request-> validate([

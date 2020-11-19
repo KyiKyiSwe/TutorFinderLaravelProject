@@ -70,7 +70,7 @@
               $.post("{{route('requesttutor.store')}}",{notes:notes,id:id,subject:subject},function (response) {
                 console.log(response.msg);
                 //localStorage.clear();
-                location.href="/userparent";
+                //location.href="/userparent";
               })
             })
           })
